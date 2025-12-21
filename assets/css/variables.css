@@ -1,0 +1,74 @@
+/* =========================================
+   VARIABLES.CSS
+   Pusat kendali warna, font, dan style global
+   ========================================= */
+
+:root {
+    /* 🎨 PALET WARNA (Color Palette) */
+    
+    /* Primary: Hijau Daun (Untuk Header, Teks Penting) */
+    --color-primary: #2E8B57; 
+    
+    /* Secondary: Hijau Muda/Mint (Untuk Background Section) */
+    --color-secondary: #E8F5E9; 
+    
+    /* Accent: Oranye (Khusus Tombol CTA agar mencolok) */
+    --color-accent: #FF9F43; 
+    --color-accent-hover: #FF8800; /* Warna saat tombol disentuh */
+
+    /* Neutral Colors */
+    --color-white: #FFFFFF;
+    --color-light-gray: #F4F4F4;
+    --color-text-body: #555555;  /* Abu-abu lembut untuk paragraf */
+    --color-text-heading: #333333; /* Hitam pudar untuk judul */
+
+    /* 🔤 TYPOGRAPHY */
+    --font-main: 'Quicksand', sans-serif;
+
+    /* 📐 UKURAN & BENTUK (Shape System) */
+    --border-radius-small: 8px;   /* Untuk kotak kecil/input */
+    --border-radius-medium: 12px; /* Untuk kartu layanan */
+    --border-radius-large: 50px;  /* Untuk tombol bulat (Pill shape) */
+    
+    /* 🌑 EFEK BAYANGAN (Shadow) - Agar terlihat timbul/modern */
+    --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 8px 25px rgba(46, 139, 87, 0.15); /* Bayangan kehijauan */
+    
+    /* 📏 LAYOUT SPACING */
+    --container-width: 1200px; /* Lebar maksimal konten di tengah */
+    --header-height: 80px;
+}
+
+/* =========================================
+   GLOBAL RESET
+   Membersihkan settingan bawaan browser
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Agar padding tidak merusak lebar elemen */
+}
+
+html {
+    scroll-behavior: smooth; /* Efek scroll halus saat klik link */
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-text-body);
+    background-color: var(--color-white);
+    line-height: 1.6; /* Jarak antar baris agar enak dibaca */
+    overflow-x: hidden; /* Mencegah scroll samping di HP */
+}
+
+/* Mengatur warna link default */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+}
