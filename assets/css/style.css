@@ -17,7 +17,7 @@
 /* Judul Section (Tengah) */
 .section-title {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .section-title h2 {
@@ -64,17 +64,45 @@
     background-color: transparent;
     border: 2px solid var(--color-primary);
     color: var(--color-primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .btn-outline:hover {
     background-color: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     color: var(--color-white);
 }
 
 /* Tombol WhatsApp (Hijau WA) */
 .btn-whatsapp {
-    background-color: #25D366;
-    color: white;
+    background-color: #25D366; /* Warna Resmi WA */
+    color: white !important; /* Paksa teks jadi putih */
+    font-weight: 700;
+    font-size: 1rem;
+    
+    /* Bikin tombol lonjong & rapi */
+    padding: 15px 35px;
+    border-radius: 50px;
+    border: none;
+    
+    /* Flexbox: Agar teks dan ikon (kalau ada) sejajar rapi */
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    
+    /* ⚡ KUNCI TRANSISI HALUS */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    
+    /* Bayangan awal (subtle) */
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+/* 3. Efek Hover (Saat Mouse Nempel) */
+.btn-whatsapp:hover {
+    background-color: #1EBE57; /* Hijau sedikit lebih gelap */
+    transform: translateY(-5px); /* Tombol naik ke atas */
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5); /* Bayangan makin tebal & menyebar */
 }
 
 /* -----------------------------------------
@@ -225,8 +253,19 @@
 .link-arrow {
     color: var(--color-primary);
     font-weight: 700;
-    float: right; /* Geser ke kanan judul */
-    margin-top: -60px; /* Hack dikit biar sejajar judul */
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-flex; /* Agar teks & panah sejajar */
+    align-items: center;
+    margin-top: 15px; /* Memberi jarak dari paragraf di atasnya */
+    transition: 0.3s;
+}
+
+/* Efek saat mouse diarahkan */
+.link-arrow:hover {
+    color: var(--color-accent); /* Berubah jadi Oranye */
+    letter-spacing: 0.5px; /* Teks sedikit merenggang */
+    transform: translateX(5px); /* Geser sedikit ke kanan */
 }
 
 .service-grid {
@@ -277,16 +316,24 @@
     text-align: center;
 }
 
+.testimonials-section h2 {
+    margin-bottom: 50px; /* Memberi jarak 50px ke bawah (ke kotak hijau) */
+    font-weight: 700;
+    color: var(--color-primary); /* Sekalian memastikan warnanya hijau konsisten */
+}
+
 .testimonial-card {
     background: var(--color-secondary);
-    padding: 40px;
+    padding: 60px 40px;
     border-radius: 20px;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto; /* Tengah */
+    position: relative;
 }
 
 .quote {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    line-height: 1.8;
     font-style: italic;
     margin-bottom: 20px;
 }
@@ -306,8 +353,23 @@
 }
 
 .cta-banner {
-    padding: 60px 0;
-    background: white;
+    background-color: #F9F9F9; 
+    padding: 100px 0; 
+    text-align: center;
+    border-top: 1px solid #EEEEEE; 
+    margin-top: 80px;
+}
+
+.cta-banner h2 {
+    font-size: 2rem;
+    color: var(--color-text-heading);
+    margin-bottom: 10px;
+}
+
+.cta-banner p {
+    color: var(--color-text-body);
+    margin-bottom: 30px;
+    font-size: 1.1rem;
 }
 
 /* -----------------------------------------
@@ -338,16 +400,95 @@ footer {
 }
 
 .footer-links ul li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
+.footer-links a {
+    color: white; /* Warna dasar putih */
+    text-decoration: none; /* Hilangkan garis bawah bawaan */
+    transition: all 0.3s ease; 
+    display: inline-block; 
+}
+
+/* Efek saat mouse menyentuh link */
 .footer-links a:hover {
-    text-decoration: underline;
+    color: var(--color-accent); /* Berubah jadi Oranye (atau warna aksenmu) */
+    transform: translateX(5px); /* Geser ke kanan 5 pixel */
+    text-shadow: 0px 0px 10px rgba(255, 159, 67, 0.5); /* Efek 'glow' tipis (opsional) */
 }
 
-.copyright {
-    background-color: #1e6640; /* Hijau lebih gelap lagi */
+.footer-brand .slogan {
+    font-weight: 700; /* Ditebalkan sedikit biar jadi headline kecil */
+    margin-bottom: 20px; /* Jarak ke paragraf cerita */
+    color: #A3EBB1; /* Hijau muda cerah */
+    font-size: 1.1rem;
+}
+
+/* Styling untuk Cerita Singkat (Footer Story) */
+.footer-story {
+    font-size: 0.95rem; /* Ukuran teks sedang */
+    line-height: 1.8;   /* Jarak antar baris lega agar mudah dibaca */
+    color: #E8F5E9;     /* Putih kehijauan (soft) */
+    opacity: 0.9;       /* Sedikit transparan biar tidak terlalu mencolok */
+    max-width: 300px;   /* BATAS PENTING: Agar teks tidak melebar ke kolom sebelah */
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start; /* Agar ikon sejajar dengan baris pertama teks */
+    gap: 15px; /* Jarak ikon ke teks */
+    margin-bottom: 20px;
+}
+
+/* Mengatur ukuran & warna ikon kontak (Lokasi/Telp) */
+.contact-item i {
+    font-size: 1.2rem;
+    color: #A3EBB1; /* Hijau muda terang agar kontras di background gelap */
+    margin-top: 5px; /* Sedikit turun biar pas sama teks */
+    width: 20px; /* Lebar tetap agar teks di sebelahnya rata kiri */
     text-align: center;
-    padding: 20px;
+}
+
+.contact-item p {
+    margin: 0;
+    line-height: 1.6;
+    color: white; /* Pastikan teks putih */
+}
+
+/* 2. Styling Tombol Social Media (Mengisi Kekosongan) */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px; /* Memberi jarak dari no telpon */
+}
+
+.social-btn {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.1); /* Putih transparan */
+    border-radius: 50%; /* Jadi bulat */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Efek saat tombol sosmed disentuh */
+.social-btn:hover {
+    background-color: white; /* Jadi putih solid */
+    color: var(--color-primary); /* Ikon jadi hijau */
+    transform: translateY(-3px); /* Naik sedikit */
+}
+
+/* 3. Garis Pemisah Copyright (Opsional: Agar lebih tegas) */
+.copyright {
+    padding-top: 30px; /* Jarak garis ke teks copyright */
+    padding-bottom: 30px; /* Jarak teks ke bawah layar */
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Garis pemisah transparan */
+    text-align: center; /* KUNCI: Membuat teks ke tengah */
+    color: #A3EBB1; /* Warna hijau muda */
     font-size: 0.9rem;
 }
