@@ -1,0 +1,353 @@
+/* =========================================
+   STYLE.CSS
+   Layout utama dan dekorasi elemen
+   ========================================= */
+
+/* -----------------------------------------
+   1. UTILITY CLASSES (Kelas Bantuan)
+   ----------------------------------------- */
+
+/* Wadah tengah agar konten tidak melebar ke pinggir monitor */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px; /* Jarak aman kiri-kanan di HP */
+}
+
+/* Judul Section (Tengah) */
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* Highlight Text (Warna Hijau pada teks tertentu) */
+.highlight {
+    color: var(--color-primary);
+}
+
+/* -----------------------------------------
+   2. BUTTON STYLES (Tombol)
+   ----------------------------------------- */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: var(--border-radius-large); /* Bulat (Pill shape) */
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+/* Tombol Utama (Oranye) */
+.btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    box-shadow: 0 4px 10px rgba(255, 159, 67, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-2px); /* Efek naik dikit */
+    box-shadow: 0 6px 15px rgba(255, 159, 67, 0.4);
+}
+
+/* Tombol Outline (Hijau Garis) */
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* Tombol WhatsApp (Hijau WA) */
+.btn-whatsapp {
+    background-color: #25D366;
+    color: white;
+}
+
+/* -----------------------------------------
+   3. NAVBAR (Header Atas)
+   ----------------------------------------- */
+.navbar {
+    height: var(--header-height);
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    position: sticky; /* Menempel saat discroll */
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-soft);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo */
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-text-heading);
+    letter-spacing: -1px;
+}
+
+.dot-in {
+    color: var(--color-primary); /* Warna hijau pada ".in" */
+}
+
+/* Menu Links */
+.nav-links a {
+    margin: 0 15px;
+    font-weight: 600;
+    color: var(--color-text-body);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--color-primary);
+}
+
+/* Sembunyikan Menu Burger di Desktop */
+.mobile-menu-icon {
+    display: none;
+}
+
+/* -----------------------------------------
+   4. HERO SECTION (Banner Utama)
+   ----------------------------------------- */
+.hero-section {
+    background-color: var(--color-secondary); /* Hijau Muda Mint */
+    padding: 60px 0;
+    min-height: calc(100vh - var(--header-height)); /* Tinggi Layar Penuh (100vh) dikurangi Tinggi Navbar (Header) */
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-content .text-area {
+    flex: 1; /* Ambil 50% lebar */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    color: var(--color-text-heading);
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: var(--color-text-body);
+}
+
+.trust-badge {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    display: flex;
+    gap: 15px;
+}
+
+.image-area {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px; /* Sudut membulat estetik */
+    box-shadow: var(--shadow-hover);
+}
+
+/* -----------------------------------------
+   5. FEATURES (Why Us)
+   ----------------------------------------- */
+.features-section {
+    padding: 80px 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Kolom */
+    gap: 30px;
+    text-align: center;
+}
+
+.feature-card {
+    padding: 30px;
+    border-radius: var(--border-radius-medium);
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    background: white;
+    box-shadow: var(--shadow-soft);
+}
+
+.icon-box {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+/* -----------------------------------------
+   6. SERVICES TEASER (Kartu Layanan)
+   ----------------------------------------- */
+.services-teaser {
+    background-color: var(--color-light-gray); /* Abu-abu tipis banget */
+    padding: 80px 0;
+}
+
+.link-arrow {
+    color: var(--color-primary);
+    font-weight: 700;
+    float: right; /* Geser ke kanan judul */
+    margin-top: -60px; /* Hack dikit biar sejajar judul */
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    border-radius: var(--border-radius-medium);
+    overflow: hidden; /* Agar gambar tidak keluar dari radius */
+    box-shadow: var(--shadow-soft);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-5px); /* Efek melayang saat hover */
+    box-shadow: var(--shadow-hover);
+}
+
+.service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Agar gambar tidak gepeng */
+}
+
+.card-body {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-body h3 {
+    margin-bottom: 10px;
+    color: var(--color-text-heading);
+}
+
+/* -----------------------------------------
+   7. TESTIMONIALS & CTA
+   ----------------------------------------- */
+.testimonials-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.testimonial-card {
+    background: var(--color-secondary);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 800px;
+    margin: 0 auto; /* Tengah */
+}
+
+.quote {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.cta-banner {
+    padding: 60px 0;
+    background: white;
+}
+
+/* -----------------------------------------
+   8. FOOTER
+   ----------------------------------------- */
+footer {
+    background-color: var(--color-primary); /* Footer Hijau Tua */
+    color: white;
+    padding-top: 60px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr; /* Kolom 1 lebih lebar */
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-logo {
+    color: white; /* Logo jadi putih di footer */
+    display: block;
+    margin-bottom: 15px;
+}
+
+.footer-links h4, .footer-contact h4 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    background-color: #1e6640; /* Hijau lebih gelap lagi */
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
