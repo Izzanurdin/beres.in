@@ -185,18 +185,22 @@
 }
 
 .hero-content p {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     margin-bottom: 30px;
     color: var(--color-text-body);
+    line-height: 1.8;
+    max-width: 90%;
 }
 
 .trust-badge {
-    margin-top: 20px;
-    font-size: 0.9rem;
+    margin-top: 25px;
+    font-size: 0.95rem;
     color: var(--color-primary);
     font-weight: 600;
     display: flex;
-    gap: 15px;
+    gap: 20px;
+    align-items: center;
+    opacity: 0.9;
 }
 
 .image-area {
@@ -207,9 +211,17 @@
 
 .hero-img {
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
     border-radius: 20px; /* Sudut membulat estetik */
     box-shadow: var(--shadow-hover);
+    box-shadow: 0 20px 40px rgba(46, 139, 87, 0.2); /* Bayangan soft hijau agar menyatu */
+    transform: rotate(-2deg); /* Opsi: Miringkan SEDIKIT sekali biar lebih dinamis/santai */
+}
+
+/* Jika ingin efek miring, pastikan hover-nya kembali lurus biar interaktif */
+.hero-img:hover {
+    transform: rotate(0deg) scale(1.02);
+    transition: all 0.5s ease;
 }
 
 /* -----------------------------------------
