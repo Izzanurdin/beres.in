@@ -17,6 +17,63 @@
     <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <!-- FAQ styles (ONLY for FAQ) -->
+    <style>
+        .faq-accordion {
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 18px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            color: #222;
+            text-align: left;
+        }
+
+        .faq-question:hover {
+            color: var(--color-primary);
+        }
+
+        .faq-icon {
+            font-size: 22px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer p {
+            padding-bottom: 18px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+    </style>
 </head>
 
 <body>
@@ -63,32 +120,69 @@
     </div>
 </section>
 
+<!-- FAQ SECTION (ONLY THIS PART IS CHANGED) -->
 <section class="testimonials-section">
     <div class="container">
         <h2>Pertanyaan yang Sering Muncul</h2>
 
-        <div class="testimonial-card">
-            <p class="quote">
-                <strong>Apakah bisa pesan mendadak?</strong><br>
-                Bisa, selama jadwal mitra tersedia.
-            </p>
+        <div class="faq-accordion">
 
-            <p class="quote">
-                <strong>Kalau hasilnya kurang bersih?</strong><br>
-                Tenang, ada garansi. Kami akan bantu sampai beres.
-            </p>
+            <div class="faq-item">
+                <button class="faq-question">
+                    Apakah bisa pesan mendadak?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Bisa, selama jadwal mitra tersedia.</p>
+                </div>
+            </div>
 
-            <p class="quote">
-                <strong>Apakah aman untuk bayi & hewan?</strong><br>
-                Aman. Semua bahan pembersih eco-friendly.
-            </p>
+            <div class="faq-item">
+                <button class="faq-question">
+                    Kalau hasilnya kurang bersih?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Tenang, ada garansi. Kami akan bantu sampai beres.</p>
+                </div>
+            </div>
+
+	    <div class="faq-item">
+                <button class="faq-question">
+                    Apakah saya harus menyiapkan alat kebersihan sendiri?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Tidak perlu. Semua peralatan dan bahan pembersih sudah disiapkan oleh tim Beres.in. Kamu tinggal duduk santai, rumah beres.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Berapa lama proses pembersihan biasanya berlangsung?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Tergantung ukuran rumah dan paket yang dipilih. Rata-rata pembersihan rumah standar memakan waktu 2–4 jam. Admin kami bisa bantu estimasi sebelum pemesanan.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Apakah aman untuk bayi & hewan?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Aman. Semua bahan pembersih eco-friendly.</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
 
 </main>
 
-<!-- FOOTER IDENTIK -->
 <footer>
     <div class="container footer-grid">
         <div class="footer-brand">
@@ -133,5 +227,16 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+
+<!-- FAQ Script (ONLY for FAQ) -->
+<script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const item = button.parentElement;
+            item.classList.toggle('active');
+        });
+    });
+</script>
+
 </body>
 </html>
