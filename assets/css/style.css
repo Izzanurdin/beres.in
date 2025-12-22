@@ -504,3 +504,64 @@ footer {
     color: #A3EBB1; /* Warna hijau muda */
     font-size: 0.9rem;
 }
+
+/* =========================================
+   FAQ ACCORDION STYLES (Update)
+   ========================================= */
+.faq-accordion {
+    max-width: 800px;
+    margin: 40px auto 0;
+}
+
+.faq-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 18px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: inherit;
+    font-size: 1.1rem; /* Sedikit disesuaikan biar enak dibaca */
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--color-text-heading); /* Pakai variabel kita */
+    text-align: left;
+    transition: 0.3s;
+}
+
+.faq-question:hover {
+    color: var(--color-primary);
+}
+
+.faq-icon {
+    font-size: 22px;
+    transition: transform 0.3s ease;
+    color: var(--color-primary); /* Biar ikonnya hijau */
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-answer p {
+    padding-bottom: 18px;
+    color: var(--color-text-body);
+    line-height: 1.6;
+    margin: 0; /* Reset margin bawaan */
+}
+
+/* State Aktif (Saat dibuka) */
+.faq-item.active .faq-answer {
+    max-height: 200px; /* Batas tinggi maksimal saat dibuka */
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg); /* Ikon plus jadi silang (x) */
+}

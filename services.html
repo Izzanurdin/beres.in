@@ -1,11 +1,215 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Daftar paket layanan kebersihan Beres.in. Dari harian hingga deep cleaning.">
+    <title>Layanan Kami | Beres.in</title>
+
+    <link rel="icon" href="assets/img/icons/favicon.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
+
 <body>
-    
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                beres<span class="dot-in">.in</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="services.html" class="active">Layanan</a> <a href="about.html">Tentang</a>
+                <a href="contact.html">Kontak</a>
+            </nav>
+            <a href="services.html" class="btn btn-primary nav-cta">Pesan Sekarang</a>
+            <div class="mobile-menu-icon" id="mobile-menu-btn">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container text-center">
+                <h1>Solusi Kebersihan <br> Sesuai Kebutuhanmu</h1>
+                <p>Pilih paket yang pas, transparan tanpa biaya tersembunyi.</p>
+            </div>
+        </section>
+
+        <section class="services-list-section">
+            <div class="container">
+                <div class="service-grid">
+                    
+                    <article class="service-card full-detail">
+                        <div class="card-img">
+                            <img src="assets/img/services/reguler.jpg" alt="Cleaning Harian">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <h3>Reguler Clean</h3>
+                                <p class="price-tag">Mulai Rp 50rb / jam</p>
+                                <p class="desc">Sapu, pel, lap debu tipis. Cocok untuk perawatan harian agar rumah tetap segar.</p>
+                            </div>
+                            
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Sapu & Pel Lantai</li>
+                                <li><i class="fas fa-check-circle"></i> Merapikan Kasur</li>
+                                <li><i class="fas fa-check-circle"></i> Lap Perabot Luar</li>
+                            </ul>
+
+                            <a href="service-detail.html?id=reguler" class="btn btn-outline full-width">Lihat Detail Paket</a>
+                        </div>
+                    </article>
+
+                    <article class="service-card full-detail">
+                        <div class="card-img">
+                            <img src="assets/img/services/premium.jpg" alt="Deep Cleaning">
+                            <span class="badge-popular">Paling Laris</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <h3>Premium Deep Clean</h3>
+                                <p class="price-tag">Mulai Rp 25rb / m²</p>
+                                <p class="desc">Pembersihan menyeluruh kerak kamar mandi, dapur, dan sudut sulit dijangkau.</p>
+                            </div>
+
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Kerak Kamar Mandi</li>
+                                <li><i class="fas fa-check-circle"></i> Deep Clean Dapur</li>
+                                <li><i class="fas fa-check-circle"></i> Kaca & Jendela</li>
+                            </ul>
+
+                            <a href="service-detail.html?id=premium" class="btn btn-primary full-width">Lihat Detail Paket</a>
+                        </div>
+                    </article>
+
+                    <article class="service-card full-detail">
+                        <div class="card-img">
+                            <img src="assets/img/services/elite.jpg" alt="Hydro Vacuum">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <h3>Elite Hydro Vacuum</h3>
+                                <p class="price-tag">Mulai Rp 80rb / item</p>
+                                <p class="desc">Sedot tungau dan debu halus dari soft furniture demi kesehatan keluarga.</p>
+                            </div>
+
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Vakum Kasur & Sofa</li>
+                                <li><i class="fas fa-check-circle"></i> Basmi Tungau</li>
+                                <li><i class="fas fa-check-circle"></i> Fogging Disinfektan</li>
+                            </ul>
+
+                            <a href="service-detail.html?id=elite" class="btn btn-outline full-width">Lihat Detail Paket</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+                <section class="faq-section">
+            <div class="container">
+                <div class="section-title center">
+                    <h2>Sering Ditanyakan</h2>
+                    <p>Biar kamu makin yakin sebelum pesan.</p>
+                </div>
+
+                <div class="faq-accordion">
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            🛠️ Apakah alat pembersih dari Beres.in?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Betul! Tim kami datang membawa peralatan lengkap dan chemical eco-friendly. Kamu terima beres saja.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            🕒 H-berapa saya harus booking?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Untuk slot aman, kami sarankan H-1. Namun jika ada slot kosong, pemesanan Same Day masih memungkinkan.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            👶 Apakah bahannya aman untuk bayi?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sangat aman. Kami menggunakan bahan berbasis tanaman yang tidak meninggalkan residu kimia berbahaya.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            📍 Melayani area mana saja?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Saat ini kami melayani seluruh area Jakarta Selatan, Tangerang Selatan, dan sekitarnya.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">beres.in</a>
+                <p>Rumah Nyaman, Semua Beres.</p>
+                <p class="footer-story">
+                    Berawal dari misi sederhana: mengembalikan waktu santaimu yang hilang. Kami hadir menyulap rumah jadi lega kembali.
+                </p>
+            </div>
+            <div class="footer-links">
+                <h4>Menu</h4>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="services.html">Layanan</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="contact.html">FAQ & Bantuan</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Hubungi Kami</h4>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i> <p>Jl. Mawar No. 123, Jakarta Selatan</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i> <p>+62 812-3456-7890</p>
+                </div>
+                <div class="social-icons">
+                    <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Beres.in - Eco Friendly Cleaning Service.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
 </body>
 </html>
