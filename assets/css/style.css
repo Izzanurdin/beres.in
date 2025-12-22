@@ -505,12 +505,181 @@ footer {
     font-size: 0.9rem;
 }
 
-/* =========================================
-   FAQ ACCORDION STYLES
-   ========================================= */
+/* =================================================================
+   9. HALAMAN SERVICES
+   ================================================================= */
 
+/* --- 1. Page Header (Judul Halaman) --- */
+.page-header {
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px; /* Memberi jarak lega ke kartu */
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-text-heading);
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    color: var(--color-text-body);
+}
+
+/* --- 2. Service Grid Layout --- */
+.services-list-section {
+    padding-bottom: 80px; /* Jarak bawah sebelum FAQ */
+}
+
+/* Memastikan grid rapi (3 Kolom) */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: flex-start; /* Agar kartu tidak tertarik paksa tingginya */
+}
+
+/* --- 3. Service Card Modern (Style Lion Parcel) --- */
+.service-card-modern {
+    background: #fff;
+    border: 1px solid #eee; /* Border halus */
+    border-radius: 16px;
+    padding: 0 0 30px 0; /* Padding bawah untuk tombol */
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03); 
+    height: 100%; /* Agar tinggi kartu seragam */
+}
+
+/* Hover Effect: Naik & Shadow Hijau */
+.service-card-modern:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(46, 139, 87, 0.15);
+    border-color: var(--color-primary);
+}
+
+/* Badge 'Paling Laris' (Khusus Premium) */
+.top-badge {
+    background: #f0fdf4; /* Hijau sangat muda */
+    color: var(--color-primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 10px;
+    width: 100%;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+}
+
+/* Header Kartu (Icon & Judul) */
+.card-header {
+    padding: 20px 30px 0 30px;
+}
+
+.icon-wrapper {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    /* Efek bayangan ikon agar 'pop' */
+    filter: drop-shadow(0px 4px 2px rgba(163, 235, 177, 0.4));
+}
+
+.service-card-modern h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: var(--color-text-heading);
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #888;
+    font-weight: 600;
+}
+
+/* Section Harga */
+.price-section {
+    margin-top: 15px;
+    color: var(--color-text-heading);
+}
+
+.price-section .amount {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.price-section .currency, 
+.price-section .unit {
+    font-weight: 600;
+    color: #888;
+}
+
+/* Garis Putus-putus (Divider) */
+.dashed-divider {
+    border-top: 2px dashed #e0e0e0;
+    margin: 25px 30px;
+    position: relative;
+}
+
+/* Deskripsi Paket */
+.card-desc {
+    padding: 0 30px;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+    color: var(--color-text-body);
+    line-height: 1.6;
+    flex-grow: 1; /* Mendorong tombol ke bawah agar sejajar */
+}
+
+/* Tombol Full Block */
+.card-footer {
+    padding: 0 30px;
+    margin-top: auto; /* Memastikan tombol selalu di dasar kartu */
+}
+
+.btn-block-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 0;
+    border-radius: 8px; /* Sedikit kotak agar tegas */
+    background-color: var(--color-text-heading); /* Default: Hitam/Abu Gelap */
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* Tombol Khusus Premium (Hijau) */
+.btn-primary-dark {
+    background-color: var(--color-primary); 
+}
+
+.btn-block-style:hover {
+    background-color: var(--color-accent); /* Hover jadi Oranye */
+    color: white;
+    transform: translateY(-2px); /* Efek tombol naik sedikit */
+}
+
+/* --- 4. FAQ Accordion (Smooth Animation) --- */
 .faq-section {
-    padding: 80px 0 100px 0; 
+    padding: 60px 0 100px 0; /* Jarak bawah extra agar tidak mepet footer */
+    background-color: #fff; /* Pastikan background putih */
 }
 
 .faq-accordion {
@@ -519,22 +688,22 @@ footer {
 }
 
 .faq-item {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #eee;
 }
 
 .faq-question {
     width: 100%;
     background: none;
     border: none;
-    padding: 18px 0;
+    padding: 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: inherit;
-    font-size: 1.1rem; /* Sedikit disesuaikan biar enak dibaca */
+    font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    color: var(--color-text-heading); /* Pakai variabel kita */
+    color: var(--color-text-heading);
     text-align: left;
     transition: 0.3s;
 }
@@ -544,14 +713,16 @@ footer {
 }
 
 .faq-icon {
-    font-size: 22px;
-    transition: transform 0.3s ease;
-    color: var(--color-primary); /* Biar ikonnya hijau */
+    font-size: 1.2rem;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    color: var(--color-primary);
 }
 
+/* Animasi Jawaban (Smooth Slide & Fade) */
 .faq-answer {
     max-height: 0;
     overflow: hidden;
+    opacity: 0;
     transform: translateY(-10px);
     transition: 
         max-height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
@@ -560,19 +731,19 @@ footer {
 }
 
 .faq-answer p {
-    padding-bottom: 18px;
+    padding-bottom: 20px;
     color: var(--color-text-body);
     line-height: 1.6;
-    margin: 0; /* Reset margin bawaan */
+    margin: 0;
 }
 
-/* State Aktif (Saat dibuka) */
+/* State Aktif FAQ */
 .faq-item.active .faq-answer {
-    max-height: 300px; /* Batas tinggi maksimal saat dibuka */
+    max-height: 300px; /* Cukup untuk teks panjang */
     opacity: 1;
     transform: translateY(0);
 }
 
 .faq-item.active .faq-icon {
-    transform: rotate(45deg); /* Ikon plus jadi silang (x) */
+    transform: rotate(45deg); /* Ikon + jadi x */
 }
