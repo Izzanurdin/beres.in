@@ -99,16 +99,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ===========================================
-    // LOGIKA TESTIMONI 
-    // ===========================================
-    const testimonialContainer = document.getElementById('testimonial-container');
+    /* ===========================================
+   LOGIKA TESTIMONI (VANILLA JS SLIDER)
+   =========================================== */
+const track = document.getElementById('testimonial-track');
+const dotsContainer = document.getElementById('testimonial-dots');
 
-    if (testimonialContainer && typeof testimonialsData !== 'undefined') {
-        testimonialContainer.innerHTML = '';
+if (track && typeof testimonialsData !== 'undefined') {
 
-        testimonialsData.forEach(testi => {
-            const testimonialHTML = `
+    testimonialsData.sort(() => Math.random() - 0.5); // Acak urutan testimoni
+    // 1. Render Kartu
+    track.innerHTML = '';
+    testimonialsData.forEach((testi, index) => {
+        // Kita beri ID unik pada setiap slide untuk navigasi
+        const slideHTML = `
+            <div class="slider-item" id="slide-${index}">
                 <div class="testi-card">
                     <div class="testi-avatar">
                         <img src="${testi.avatar}" alt="${testi.name}">
@@ -122,10 +127,55 @@ document.addEventListener('DOMContentLoaded', () => {
                         <i class="fas fa-quote-right quote-icon"></i>
                     </div>
                 </div>
-            `;
-            testimonialContainer.innerHTML += testimonialHTML;
+            </div>
+        `;
+        track.innerHTML += slideHTML;
+    });
+
+    // 2. Render Dots (Navigasi)
+    dotsContainer.innerHTML = '';
+    testimonialsData.forEach((_, index) => {
+        // Buat dot element
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (index === 0) dot.classList.add('active'); // Dot pertama aktif
+        
+        // Event Klik Dot
+        dot.addEventListener('click', () => {
+            const targetSlide = document.getElementById(`slide-${index}`);
+            if (targetSlide) {
+                // Perintah scroll native yang smooth
+                track.scrollTo({
+                    left: targetSlide.offsetLeft,
+                    behavior: 'smooth'
+                });
+            }
         });
-    }
+
+        dotsContainer.appendChild(dot);
+    });
+
+    // 3. Update Dot saat di-Scroll (Scroll Spy)
+    track.addEventListener('scroll', () => {
+        // Ambil posisi scroll saat ini
+        const scrollPosition = track.scrollLeft;
+        const trackWidth = track.scrollWidth - track.clientWidth;
+        
+        // Loop semua slide untuk cek mana yang sedang terlihat
+        const slides = document.querySelectorAll('.slider-item');
+        const dots = document.querySelectorAll('.dot');
+        
+        slides.forEach((slide, index) => {
+            // Logika sederhana: Jika posisi slide mendekati posisi scroll kiri
+            // Kita pakai toleransi jarak (offset) sedikit
+            if (slide.offsetLeft - track.offsetLeft <= scrollPosition + 100) {
+                // Reset semua dot
+                dots.forEach(d => d.classList.remove('active'));
+                // Aktifkan dot yang sesuai
+                if(dots[index]) dots[index].classList.add('active');
+            }
+        });
+    });
+}
+
 });
-
-

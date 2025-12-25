@@ -329,7 +329,7 @@
    ========================================= */
 
 .testimonials-section {
-    background-color: #f4fcf6; /* Latar hijau/abu sangat muda */
+    background-color: #f4fcf6; 
     padding: 80px 0 100px 0;
 }
 
@@ -344,13 +344,13 @@
 .testi-card {
     background: #fff;
     border-radius: 20px;
-    padding: 60px 30px 40px 30px; /* Padding atas besar (60px) biar teks ga nabrak foto */
+    padding: 60px 30px 40px 30px; 
     position: relative;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
     border: 1px solid #fff;
-    margin-top: 30px; /* Penting! Memberi ruang untuk kepala 'floating' */
+    margin-top: 30px; 
+    transition: transform 0.3s ease;
 }
 
 .testi-card:hover {
@@ -358,7 +358,68 @@
     box-shadow: 0 15px 40px rgba(46, 139, 87, 0.1);
 }
 
-/* FOTO PROFIL MENGAMBANG */
+/* --- 1. SLIDER MECHANICS (Wadah & Jalur) --- */
+
+/* Wadah Utama: Menyembunyikan Scrollbar */
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Mencegah scrollbar browser default muncul */
+    padding-top: 50px; /* Ruang untuk kepala avatar yang nongol */
+    padding-bottom: 20px; /* Ruang untuk bayangan bawah */
+}
+
+/* Jalur Slider (Track) */
+.slider-track {
+    display: flex;
+    gap: 30px; /* Jarak antar kartu */
+    overflow-x: auto; /* Izinkan scroll horizontal */
+    
+    /* Fitur Scroll Snap (Agar berhenti pas di tengah/awal kartu) */
+    scroll-snap-type: x mandatory; 
+    scroll-behavior: smooth; /* Gerakan halus */
+    
+    /* Menyembunyikan Scrollbar (Estetika) */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    padding-bottom: 20px; 
+}
+
+/* Sembunyikan scrollbar di Chrome/Safari */
+.slider-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* --- 2. SLIDER ITEM (Ukuran Kartu Default Desktop) --- */
+.slider-item {
+    /* DEFAULT DESKTOP: 3 Kolom */
+    /* Rumus: (100% lebar - total gap 60px) dibagi 3 */
+    flex: 0 0 calc((100% - 60px) / 3); 
+    
+    /* Posisi snap */
+    scroll-snap-align: start; 
+}
+
+/* --- 3. TESTIMONI CARD STYLE (Floating Avatar) --- */
+.testi-card {
+    background: #fff;
+    border-radius: 20px;
+    /* Padding atas besar (60px) biar teks ga nabrak foto */
+    padding: 60px 30px 40px 30px; 
+    position: relative;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid #fff;
+    height: 100%; /* Agar tinggi kartu seragam */
+    transition: transform 0.3s ease;
+}
+
+.testi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(46, 139, 87, 0.1);
+}
+
+/* Foto Profil Mengambang */
 .testi-avatar {
     position: absolute;
     top: -40px; /* Menarik foto ke atas keluar dari kartu */
@@ -370,6 +431,7 @@
     background: #fff;
     padding: 5px; /* Frame putih di sekeliling foto */
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 2;
 }
 
 .testi-avatar img {
@@ -379,17 +441,17 @@
     border-radius: 50%;
 }
 
-/* LOGO KUTIPAN BESAR (Background) */
+/* Ikon Kutipan (Background) */
 .quote-icon {
     position: absolute;
     bottom: 20px;
     right: 20px;
     font-size: 4rem;
-    color: var(--color-primary); /* Warna Hijau */
+    color: var(--color-primary);
     opacity: 0.05; /* Sangat transparan */
 }
 
-/* TYPOGRAPHY */
+/* Typography */
 .testi-author h4 {
     color: var(--color-text-heading);
     font-size: 1.1rem;
@@ -410,6 +472,29 @@
     color: var(--color-text-body);
     line-height: 1.6;
     font-size: 0.95rem;
+}
+
+/* --- 4. PAGINATION DOTS --- */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    width: 30px; /* Memanjang saat aktif */
+    border-radius: 6px;
+    background-color: var(--color-primary);
 }
 
 

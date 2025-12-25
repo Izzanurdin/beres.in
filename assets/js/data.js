@@ -87,11 +87,39 @@ const servicesData = [
    ========================================= */
 const testimonialsData = [
     {
-        name: "Dinda Permata",
-        role: "Ibu Rumah Tangga",
-        location: "Jakarta Selatan",
-        quote: "Dulu weekend habis buat bersih-bersih. Sekarang weekend isinya jalan-jalan sama anak. Pulang-pulang rumah udah wangi. Makasih Beres.in!",
-        avatar: "assets/img/hero/testimony.png" // Pastikan gambar ini ada
+        name: "Raka Aditya",
+        role: "Freelance Designer",
+        location: "Depok",
+        quote: "Biasanya ragu panggil orang asing ke apartemen, tapi tim Beres.in profesional banget. Datang on-time, kerja gesit, dan sopan. Bakal langganan sih.",
+        avatar: "https://randomuser.me/api/portraits/men/45.jpg"
+    },
+    {
+        name: "Clarissa Putri",
+        role: "Cat Lover",
+        location: "Bekasi",
+        quote: "Punya 3 kucing bikin bulu nempel di mana-mana. Pake layanan Hydro Vacuum-nya Beres.in, sofa sama karpet jadi kayak baru lagi. Aman buat anabul juga!",
+        avatar: "https://randomuser.me/api/portraits/women/68.jpg"
+    },
+    {
+        name: "Pak Hendra",
+        role: "Office Manager",
+        location: "Jakarta Pusat",
+        quote: "Kami coba paket corporate untuk bersih-bersih kantor seminggu sekali. Karyawan jadi lebih nyaman kerjanya. Invoice-nya juga rapi untuk klaim kantor.",
+        avatar: "https://randomuser.me/api/portraits/men/22.jpg"
+    },
+    {
+        name: "Ibu Ratna Sari",
+        role: "Pensiunan Guru",
+        location: "Bogor",
+        quote: "Petugasnya anak muda tapi rajin-rajin sekali. Mereka mau bantu geser lemari berat buat bersihin debu tebal di belakangnya. Puas sekali.",
+        avatar: "https://randomuser.me/api/portraits/women/90.jpg"
+    },
+    {
+        name: "Kevin Sanjaya",
+        role: "Mahasiswa",
+        location: "Jakarta Timur",
+        quote: "Pas banget buat anak kost yang sibuk skripsi. Harga mahasiswa tapi bersihnya totalitas. Kamar mandi kost gue jadi kinclong parah.",
+        avatar: "https://randomuser.me/api/portraits/men/11.jpg"
     },
     {
         name: "Budi Santoso",
@@ -107,6 +135,5 @@ const testimonialsData = [
         quote: "Sangat terbantu untuk bersihin kamar kost yang baru ditinggal penyewa. Cepat, bersih, dan harganya masuk akal.",
         avatar: "https://randomuser.me/api/portraits/women/44.jpg" // Contoh gambar placeholder
     }
-    
 ];
 
