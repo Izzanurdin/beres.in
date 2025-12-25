@@ -99,4 +99,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ===========================================
+    // LOGIKA TESTIMONI 
+    // ===========================================
+    const testimonialContainer = document.getElementById('testimonial-container');
+
+    if (testimonialContainer && typeof testimonialsData !== 'undefined') {
+        testimonialContainer.innerHTML = '';
+
+        testimonialsData.forEach(testi => {
+            const testimonialHTML = `
+                <div class="testi-card">
+                    <div class="testi-avatar">
+                        <img src="${testi.avatar}" alt="${testi.name}">
+                    </div>
+                    <div class="testi-content">
+                        <div class="testi-author">
+                            <h4>${testi.name}</h4>
+                            <span>${testi.role}, ${testi.location}</span>
+                        </div>
+                        <p class="testi-quote">"${testi.quote}"</p>
+                        <i class="fas fa-quote-right quote-icon"></i>
+                    </div>
+                </div>
+            `;
+            testimonialContainer.innerHTML += testimonialHTML;
+        });
+    }
 });
+
+

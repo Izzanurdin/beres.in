@@ -215,14 +215,14 @@
     border-radius: 20px; /* Sudut membulat estetik */
     box-shadow: var(--shadow-hover);
     box-shadow: 0 20px 40px rgba(46, 139, 87, 0.2); /* Bayangan soft hijau agar menyatu */
-    transform: rotate(-2deg); /* Opsi: Miringkan SEDIKIT sekali biar lebih dinamis/santai */
+    /* transform: rotate(-2deg); Opsi: Miringkan SEDIKIT sekali biar lebih dinamis/santai */
 }
 
 /* Jika ingin efek miring, pastikan hover-nya kembali lurus biar interaktif */
-.hero-img:hover {
+/* .hero-img:hover {
     transform: rotate(0deg) scale(1.02);
     transition: all 0.5s ease;
-}
+} */
 
 /* -----------------------------------------
    5. FEATURES (Why Us)
@@ -321,49 +321,98 @@
     color: var(--color-text-heading);
 }
 
-/* -----------------------------------------
-   7. TESTIMONIALS & CTA
-   ----------------------------------------- */
+/* =========================================
+   TESTIMONIALS SECTION
+   ========================================= */
+
 .testimonials-section {
-    padding: 80px 0;
-    text-align: center;
+    background-color: #f4fcf6; /* Latar hijau/abu sangat muda */
+    padding: 80px 0 100px 0;
 }
 
-.testimonials-section h2 {
-    margin-bottom: 50px; /* Memberi jarak 50px ke bawah (ke kotak hijau) */
-    font-weight: 700;
-    color: var(--color-primary); /* Sekalian memastikan warnanya hijau konsisten */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px; /* Jarak antar kartu */
+    margin-top: 50px; /* Jarak extra di atas untuk kepala yang nonjol */
 }
 
-.testimonial-card {
-    background: var(--color-secondary);
-    padding: 60px 40px;
+/* KARTU PUTIH */
+.testi-card {
+    background: #fff;
     border-radius: 20px;
-    max-width: 900px;
-    margin: 0 auto; /* Tengah */
+    padding: 60px 30px 40px 30px; /* Padding atas besar (60px) biar teks ga nabrak foto */
     position: relative;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid #fff;
+    margin-top: 30px; /* Penting! Memberi ruang untuk kepala 'floating' */
 }
 
-.quote {
-    font-size: 1.3rem;
-    line-height: 1.8;
-    font-style: italic;
+.testi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(46, 139, 87, 0.1);
+}
+
+/* FOTO PROFIL MENGAMBANG */
+.testi-avatar {
+    position: absolute;
+    top: -40px; /* Menarik foto ke atas keluar dari kartu */
+    left: 50%;
+    transform: translateX(-50%); /* Posisi tengah presisi */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 5px; /* Frame putih di sekeliling foto */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.testi-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* LOGO KUTIPAN BESAR (Background) */
+.quote-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 4rem;
+    color: var(--color-primary); /* Warna Hijau */
+    opacity: 0.05; /* Sangat transparan */
+}
+
+/* TYPOGRAPHY */
+.testi-author h4 {
+    color: var(--color-text-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.testi-author span {
+    display: block;
+    color: #888;
+    font-size: 0.85rem;
+    font-weight: 600;
     margin-bottom: 20px;
 }
 
-.user-profile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+.testi-quote {
+    font-style: italic;
+    color: var(--color-text-body);
+    line-height: 1.6;
+    font-size: 0.95rem;
 }
 
-.avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-}
+
+/* =========================================
+   CTA SECTION
+   ========================================= */
 
 .cta-banner {
     background-color: #F9F9F9; 
@@ -747,4 +796,95 @@ footer {
 
 .faq-item.active .faq-icon {
     transform: rotate(45deg); /* Ikon + jadi x */
+}
+
+/* =========================================
+   10. CONTACT PAGE 
+   ========================================= */
+
+.contact-section {
+    padding-bottom: 80px;
+}
+
+/* Grid Wrapper: Membagi layar jadi 2 kolom (Kiri 40%, Kanan 60%) */
+.contact-grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 50px;
+    align-items: start; /* Supaya rata atas */
+}
+
+/* --- KARTU KONTAK (Kiri) --- */
+.contact-info-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.contact-info-card h3 {
+    margin-bottom: 5px;
+    color: var(--color-text-heading);
+}
+
+.contact-info-card p {
+    color: var(--color-text-body);
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+}
+
+.btn.full-width {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.divider-text {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 0.85rem;
+    color: #aaa;
+    position: relative;
+}
+
+/* Item Info (Alamat & Email) */
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 10px;
+}
+
+.info-item .icon {
+    width: 40px;
+    height: 40px;
+    background: #e8f5e9; /* Hijau muda pudar */
+    color: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.info-item h5 {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--color-text-heading);
+}
+
+.info-item p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* --- FAQ WRAPPER (Kanan) --- */
+.faq-wrapper h3 {
+    margin-bottom: 25px;
+    color: var(--color-text-heading);
 }

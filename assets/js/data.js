@@ -80,3 +80,33 @@ const servicesData = [
         link: "service-detail.html?id=kost"
     }
 ];
+
+
+/* =========================================
+   DATABASE TESTIMONI (Baru)
+   ========================================= */
+const testimonialsData = [
+    {
+        name: "Dinda Permata",
+        role: "Ibu Rumah Tangga",
+        location: "Jakarta Selatan",
+        quote: "Dulu weekend habis buat bersih-bersih. Sekarang weekend isinya jalan-jalan sama anak. Pulang-pulang rumah udah wangi. Makasih Beres.in!",
+        avatar: "assets/img/hero/testimony.png" // Pastikan gambar ini ada
+    },
+    {
+        name: "Budi Santoso",
+        role: "Karyawan Swasta",
+        location: "Tangerang",
+        quote: "Pelayanannya sangat detail. Saya pesan paket deep cleaning untuk kamar mandi, keraknya benar-benar hilang total. Recommended!",
+        avatar: "https://randomuser.me/api/portraits/men/32.jpg" // Contoh gambar placeholder
+    },
+    {
+        name: "Siti Aminah",
+        role: "Pemilik Kost",
+        location: "Jakarta Barat",
+        quote: "Sangat terbantu untuk bersihin kamar kost yang baru ditinggal penyewa. Cepat, bersih, dan harganya masuk akal.",
+        avatar: "https://randomuser.me/api/portraits/women/44.jpg" // Contoh gambar placeholder
+    }
+    
+];
+
