@@ -374,6 +374,7 @@
     display: flex;
     gap: 30px; /* Jarak antar kartu */
     overflow-x: auto; /* Izinkan scroll horizontal */
+    overflow-y: hidden; /* Scroll Vertikal: MATI */
     
     /* Fitur Scroll Snap (Agar berhenti pas di tengah/awal kartu) */
     scroll-snap-type: x mandatory; 
@@ -382,7 +383,10 @@
     /* Menyembunyikan Scrollbar (Estetika) */
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE/Edge */
-    padding-bottom: 20px; 
+    /* Pastikan padding bawah cukup untuk bayangan kartu supaya tidak terpotong */
+    padding-bottom: 40px; 
+    /* Padding atas sedikit agar hover naik tidak terpotong */
+    padding-top: 10px;
 }
 
 /* Sembunyikan scrollbar di Chrome/Safari */
