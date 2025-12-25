@@ -43,7 +43,7 @@
     font-size: 1rem;
     cursor: pointer;
     border: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* Tombol Utama (Oranye) */
@@ -65,13 +65,16 @@
     border: 2px solid var(--color-primary);
     color: var(--color-primary);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: inline-block; 
+    text-decoration: none;
 }
 
 .btn-outline:hover {
     background-color: var(--color-primary);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     color: var(--color-white);
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(46, 139, 87, 0.2);
 }
 
 /* Tombol WhatsApp (Hijau WA) */
@@ -468,8 +471,8 @@ footer {
 .footer-links a {
     color: white; /* Warna dasar putih */
     text-decoration: none; /* Hilangkan garis bawah bawaan */
-    transition: all 0.3s ease; 
     display: inline-block; 
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* Efek saat mouse menyentuh link */
@@ -534,7 +537,7 @@ footer {
     justify-content: center;
     color: white;
     font-size: 1.2rem;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
