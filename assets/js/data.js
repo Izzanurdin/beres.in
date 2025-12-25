@@ -108,6 +108,18 @@ const servicesData = [
         description: "Versi Lite dari paket Reguler khusus kamar kost (max 3x4m). Cukup sapu, pel, rapikan sprei, dan angkut sampah. Murah meriah!",
         isPopular: false,
         link: "service-detail.html?id=kamar"
+    },
+    {
+        id: "kantor",
+        category: "tambahan",
+        title: "Beres.in Kantor",
+        subtitle: "Office & Commercial",
+        icon: "fas fa-building", // Ikon Gedung Kantor
+        price: "20rb",
+        unit: "/ m²",
+        description: "Lingkungan kerja bersih = Produktivitas naik. General cleaning untuk area kerja, pantry, dan ruang meeting. Tersedia opsi kontrak bulanan.",
+        isPopular: false,
+        link: "service-detail.html?id=kantor"
     }
 ];
 
