@@ -1,83 +1,113 @@
 /* =========================================
-   DATABASE LAYANAN (data.js) - FINAL
+   DATABASE LAYANAN & TESTIMONI (data.js)
    ========================================= */
 
+// --- BAGIAN 1: DAFTAR LAYANAN ---
 const servicesData = [
-    // --- PAKET UTAMA (Muncul di Home & Services) ---
+    // =================================================
+    // KATEGORI UTAMA (Muncul di Homepage & Services)
+    // =================================================
     {
         id: "reguler",
         category: "utama",
-        title: "Beres.in Reguler",  
+        title: "Beres.in Reguler",
         subtitle: "Perawatan Harian",
         icon: "fas fa-broom", 
         price: "50rb",
         unit: "/ jam",
-        description: "Sapu, pel, dan lap debu ringan. Solusi hemat untuk rumah yang selalu segar setiap hari.",
+        description: "Sapu, pel, lap debu, dan merapikan kasur. Solusi hemat & praktis untuk anak kost atau apartemen studio agar tetap nyaman setiap hari.",
         isPopular: false,
         link: "service-detail.html?id=reguler"
     },
     {
         id: "premium",
         category: "utama",
-        title: "Beres.in Premium",  
-        subtitle: "Bersih Tuntas",
+        title: "Beres.in Premium",
+        subtitle: "Deep Cleaning",
         icon: "fas fa-pump-soap",
         price: "25rb",
         unit: "/ m²",
-        description: "Pembersihan menyeluruh kerak kamar mandi, dapur berminyak, dan sudut sulit dijangkau.",
+        description: "Pembersihan menyeluruh hingga ke kerak kamar mandi, noda minyak dapur, dan sudut tersembunyi. Cocok untuk rumah keluarga atau pindahan.",
         isPopular: true,
-        badgeText: "Paling Laris (Deep Cleaning)",
+        badgeText: "Paling Laris (Garansi Bersih)",
         link: "service-detail.html?id=premium"
     },
     {
         id: "elite",
         category: "utama",
-        title: "Beres.in Elite",    
-        subtitle: "Basmi Tungau",
+        title: "Beres.in Elite",
+        subtitle: "Hydro Vacuum & Health",
         icon: "fas fa-virus-slash",
         price: "80rb",
         unit: "/ item",
-        description: "Sedot tungau (hydro vacuum) & fogging disinfektan untuk kesehatan keluarga tercinta.",
+        description: "Spesialis sedot tungau & debu halus pada kasur/sofa menggunakan teknologi Hydro Vacuum, plus fogging disinfektan. Aman untuk bayi & alergi.",
         isPopular: false,
         link: "service-detail.html?id=elite"
     },
 
-    // --- PAKET TAMBAHAN (Hanya muncul di Halaman Services) ---
+    // =================================================
+    // KATEGORI TAMBAHAN (Ala Carte / Satuan)
+    // =================================================
     {
-        id: "wc",
+        id: "toilet",
         category: "tambahan",
-        title: "Beres.in WC",
-        subtitle: "Kamar Mandi Kinclong",
-        icon: "fas fa-toilet",
+        title: "Beres.in Toilet",
+        subtitle: "Salon Kamar Mandi",
+        icon: "fas fa-toilet", 
         price: "150rb",
         unit: "/ unit",
-        description: "Fokus membersihkan kerak membandel di lantai, dinding, dan sanitari kamar mandi.",
+        description: "Spesialis kerak membandel! Mengembalikan kilau kamar mandi Anda, bebas jamur kaca dan noda kekuningan yang sulit hilang.",
+        isPopular: true, // Best Seller kategori Ala Carte
+        badgeText: "Ampuh Lawan Kerak",
+        link: "service-detail.html?id=toilet"
+    },
+    {
+        id: "sofa",
+        category: "tambahan",
+        title: "Beres.in Sofa",
+        subtitle: "Cuci Basah (Wet Clean)",
+        icon: "fas fa-couch",
+        price: "50rb",
+        unit: "/ dudukan",
+        description: "Sofa kotor, bernoda, atau bau apek? Kami cuci menggunakan metode ekstraksi vakum. Mengangkat kotoran dari dalam busa. Kering 80%.",
         isPopular: false,
-        link: "service-detail.html?id=wc"
+        link: "service-detail.html?id=sofa"
     },
     {
         id: "dapur",
         category: "tambahan",
         title: "Beres.in Dapur",
-        subtitle: "Kitchen Set Bersih",
-        icon: "fas fa-utensils",
+        subtitle: "Hapus Minyak Lengket",
+        icon: "fas fa-fire-burner", 
         price: "200rb",
         unit: "/ paket",
-        description: "Membersihkan area kompor, sink, dan kabinet luar dari noda minyak membandel.",
+        description: "Detailing area masak dari cipratan minyak menahun. Meliputi kompor, cooker hood, dinding backsplash, dan sink cuci piring.",
         isPopular: false,
         link: "service-detail.html?id=dapur"
     },
     {
-        id: "kost",
+        id: "kulkas",
         category: "tambahan",
-        title: "Beres.in Kost",
-        subtitle: "Paket Anak Kost",
-        icon: "fas fa-bed",
-        price: "35rb",
-        unit: "/ jam",
-        description: "Paket hemat khusus kamar kost (max 3x4m). Sapu, pel, rapihkan kasur, dan buang sampah.",
+        title: "Beres.in Kulkas",
+        subtitle: "Fridge Detox",
+        icon: "fas fa-snowflake", 
+        price: "75rb",
+        unit: "/ unit",
+        description: "Kulkas bau dan berantakan? Kami cuci rak-raknya, buang makanan expired, dan sterilkan agar makanan tetap segar dan sehat.",
         isPopular: false,
-        link: "service-detail.html?id=kost"
+        link: "service-detail.html?id=kulkas"
+    },
+    {
+        id: "kamar",
+        category: "tambahan",
+        title: "Beres.in Kamar",
+        subtitle: "Paket Hemat Kost",
+        icon: "fas fa-bed", 
+        price: "35rb",
+        unit: "/ kamar",
+        description: "Versi Lite dari paket Reguler khusus kamar kost (max 3x4m). Cukup sapu, pel, rapikan sprei, dan angkut sampah. Murah meriah!",
+        isPopular: false,
+        link: "service-detail.html?id=kamar"
     }
 ];
 
