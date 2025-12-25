@@ -884,7 +884,12 @@ footer {
 }
 
 /* --- FAQ WRAPPER (Kanan) --- */
+.faq-wrapper {
+    padding-top: 30px; 
+}
+
 .faq-wrapper h3 {
     margin-bottom: 25px;
     color: var(--color-text-heading);
+    margin-top: 0; 
 }
