@@ -129,53 +129,76 @@ const servicesData = [
    ========================================= */
 const testimonialsData = [
     {
-        name: "Raka Aditya",
-        role: "Freelance Designer",
-        location: "Depok",
-        quote: "Biasanya ragu panggil orang asing ke apartemen, tapi tim Beres.in profesional banget. Datang on-time, kerja gesit, dan sopan. Bakal langganan sih.",
-        avatar: "https://randomuser.me/api/portraits/men/45.jpg"
+        name: "Kevin Sanjaya",
+        role: "Mahasiswa",
+        location: "Jakarta Timur",
+        // Review untuk: Beres.in Kamar (Paket Hemat)
+        quote: "Sebagai anak kost, paket 35rb itu penyelamat banget! Pulang kampus kamar udah rapi, sprei diganti, sampah dibuang. Worth it parah.",
+        avatar: "https://randomuser.me/api/portraits/men/11.jpg"
     },
     {
-        name: "Clarissa Putri",
-        role: "Cat Lover",
-        location: "Bekasi",
-        quote: "Punya 3 kucing bikin bulu nempel di mana-mana. Pake layanan Hydro Vacuum-nya Beres.in, sofa sama karpet jadi kayak baru lagi. Aman buat anabul juga!",
+        name: "Ibu Lussiana",
+        role: "Ibu Rumah Tangga",
+        location: "BSD City",
+        // Review untuk: Beres.in Premium (Deep Cleaning)
+        quote: "Baru pindah ke rumah second yang kotor banget. Panggil tim Beres.in buat Deep Cleaning, hasilnya ajaib. Lantai yang kusam jadi kilap lagi.",
         avatar: "https://randomuser.me/api/portraits/women/68.jpg"
     },
     {
         name: "Pak Hendra",
         role: "Office Manager",
         location: "Jakarta Pusat",
-        quote: "Kami coba paket corporate untuk bersih-bersih kantor seminggu sekali. Karyawan jadi lebih nyaman kerjanya. Invoice-nya juga rapi untuk klaim kantor.",
+        // Review untuk: Beres.in Kantor (B2B)
+        quote: "Kami pakai paket kontrak bulanan untuk kantor. OB kami cuma 1, jadi butuh bantuan Beres.in buat general cleaning tiap Jumat. Karyawan jadi lebih nyaman.",
         avatar: "https://randomuser.me/api/portraits/men/22.jpg"
     },
     {
-        name: "Ibu Ratna Sari",
-        role: "Pensiunan Guru",
-        location: "Bogor",
-        quote: "Petugasnya anak muda tapi rajin-rajin sekali. Mereka mau bantu geser lemari berat buat bersihin debu tebal di belakangnya. Puas sekali.",
-        avatar: "https://randomuser.me/api/portraits/women/90.jpg"
-    },
-    {
-        name: "Kevin Sanjaya",
-        role: "Mahasiswa",
-        location: "Jakarta Timur",
-        quote: "Pas banget buat anak kost yang sibuk skripsi. Harga mahasiswa tapi bersihnya totalitas. Kamar mandi kost gue jadi kinclong parah.",
-        avatar: "https://randomuser.me/api/portraits/men/11.jpg"
+        name: "Clarissa Putri",
+        role: "Cat Lover",
+        location: "Bekasi",
+        // Review untuk: Beres.in Elite (Hydro Vacuum)
+        quote: "Punya 3 kucing bikin sofa penuh bulu & debu. Pake layanan Hydro Vacuum, air kotornya item banget! Sekarang sofa aman buat tiduran lagi.",
+        avatar: "https://randomuser.me/api/portraits/women/44.jpg"
     },
     {
         name: "Budi Santoso",
-        role: "Karyawan Swasta",
+        role: "Wiraswasta",
         location: "Tangerang",
-        quote: "Pelayanannya sangat detail. Saya pesan paket deep cleaning untuk kamar mandi, keraknya benar-benar hilang total. Recommended!",
-        avatar: "https://randomuser.me/api/portraits/men/32.jpg" // Contoh gambar placeholder
+        // Review untuk: Beres.in Toilet (Ala Carte)
+        quote: "Udah nyerah sikat kerak kuning di WC lantai 2. Iseng pesen layanan Toilet, eh beneran rontok keraknya. Kayak kamar mandi hotel jadinya.",
+        avatar: "https://randomuser.me/api/portraits/men/32.jpg"
     },
     {
         name: "Siti Aminah",
-        role: "Pemilik Kost",
+        role: "Pemilik Katering",
+        location: "Jakarta Selatan",
+        // Review untuk: Beres.in Dapur (Ala Carte)
+        quote: "Dapur katering pasti berminyak parah. Tim Beres.in bersihin cooker hood sama dinding backsplash sampe kesat lagi. Nggak lengket sama sekali.",
+        avatar: "https://randomuser.me/api/portraits/women/90.jpg"
+    },
+    {
+        name: "Dimas Anggara",
+        role: "Karyawan Swasta",
+        location: "Depok",
+        // Review untuk: Beres.in Sofa (Wet Clean)
+        quote: "Sofa ketumpahan kopi susu dan udah bau apek. Dicuci basah sama mereka, nodanya hilang total dan wanginya enak. Keringnya juga cepet.",
+        avatar: "https://randomuser.me/api/portraits/men/45.jpg"
+    },
+    {
+        name: "Dr. Rina",
+        role: "Dokter Anak",
         location: "Jakarta Barat",
-        quote: "Sangat terbantu untuk bersihin kamar kost yang baru ditinggal penyewa. Cepat, bersih, dan harganya masuk akal.",
-        avatar: "https://randomuser.me/api/portraits/women/44.jpg" // Contoh gambar placeholder
+        // Review untuk: Beres.in Kulkas (Health)
+        quote: "Kulkas itu sarang kuman kalau jarang dibersihkan. Layanan Fridge Detox-nya sangat detail, semua rak dicuci dan disterilkan. Sangat recommended.",
+        avatar: "https://randomuser.me/api/portraits/women/33.jpg"
+    },
+    {
+        name: "Dinda Permata",
+        role: "Ibu Baru",
+        location: "Jakarta Selatan",
+        // Review untuk: Beres.in Reguler
+        quote: "Dulu weekend habis buat bersih-bersih. Sekarang langganan paket Reguler tiap Sabtu, jadi bisa fokus main sama bayi. Rumah wangi, hati senang.",
+        avatar: "assets/img/hero/testimony.png" 
     }
 ];
 
