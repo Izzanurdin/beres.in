@@ -2,10 +2,10 @@
    DATABASE LAYANAN & TESTIMONI (data.js)
    ========================================= */
 
-// --- BAGIAN 1: DAFTAR LAYANAN ---
+// --- BAGIAN 1: DAFTAR LAYANAN LENGKAP ---
 const servicesData = [
     // =================================================
-    // KATEGORI UTAMA (Muncul di Homepage & Services)
+    // KATEGORI UTAMA
     // =================================================
     {
         id: "reguler",
@@ -15,8 +15,26 @@ const servicesData = [
         icon: "fas fa-broom", 
         price: "50rb",
         unit: "/ jam",
-        description: "Sapu, pel, lap debu, dan merapikan kasur. Solusi hemat & praktis untuk anak kost atau apartemen studio agar tetap nyaman setiap hari.",
+        description: "Solusi hemat & praktis untuk rumah yang selalu segar setiap hari.",
+        fullDescription: "Layanan housekeeping standar hotel untuk menjaga kebersihan harian tempat tinggalmu. Cocok untuk kamu yang sibuk bekerja dan ingin pulang ke rumah yang rapi, wangi, dan bebas debu permukaan.",
+        whatsappMessage: "Halo Admin Beres.in, saya mau pesan layanan *Reguler Cleaning*. Apakah slot tersedia?",
         isPopular: false,
+        // 👇 DATA DETAIL (Scope vs Tools)
+        scope: [
+            "Menyapu & Mengepel seluruh lantai",
+            "Dusting (lap debu) furnitur & meja",
+            "Merapikan tempat tidur",
+            "Membersihkan kaca cermin",
+            "Membuang sampah harian",
+            "Semprot pengharum ruangan"
+        ],
+        tools: [
+            "Sapu & Pengki Set",
+            "Alat Pel (Mop) Microfiber",
+            "Lap Microfiber (Merah/Biru/Kuning)",
+            "Cairan Pembersih Lantai (Eco)",
+            "Cairan Kaca (Glass Cleaner)"
+        ],
         link: "service-detail.html?id=reguler"
     },
     {
@@ -27,9 +45,27 @@ const servicesData = [
         icon: "fas fa-pump-soap",
         price: "25rb",
         unit: "/ m²",
-        description: "Pembersihan menyeluruh hingga ke kerak kamar mandi, noda minyak dapur, dan sudut tersembunyi. Cocok untuk rumah keluarga atau pindahan.",
+        description: "Pembersihan menyeluruh kerak kamar mandi & dapur berminyak.",
+        fullDescription: "Deep Cleaning adalah pembersihan mendalam untuk mengangkat kotoran yang sudah menahun. Sangat disarankan untuk rumah yang lama ditinggal, pasca renovasi, atau pindahan rumah.",
+        whatsappMessage: "Halo Admin, saya butuh *Deep Cleaning (Premium)*. Bisa bantu hitung estimasi biayanya?",
         isPopular: true,
         badgeText: "Paling Laris (Garansi Bersih)",
+        scope: [
+            "Pembersihan kerak kamar mandi",
+            "Pembersihan minyak dapur & kompor",
+            "Detailing rel jendela & kusen",
+            "Membersihkan sawang-sawang (langit-langit)",
+            "Pembersihan balkon & teras",
+            "Semua fitur Paket Reguler"
+        ],
+        tools: [
+            "Mesin Polisher (Sikat Lantai)",
+            "Vacuum Cleaner (Dry)",
+            "Sikat & Pad Abrasif Khusus",
+            "Chemical Penghancur Kerak (Heavy Duty)",
+            "Degreaser (Penghancur Minyak)",
+            "Tangga Lipat (Reach Tool)"
+        ],
         link: "service-detail.html?id=premium"
     },
     {
@@ -40,13 +76,29 @@ const servicesData = [
         icon: "fas fa-virus-slash",
         price: "80rb",
         unit: "/ item",
-        description: "Spesialis sedot tungau & debu halus pada kasur/sofa menggunakan teknologi Hydro Vacuum, plus fogging disinfektan. Aman untuk bayi & alergi.",
+        description: "Sedot tungau & fogging disinfektan untuk kesehatan keluarga.",
+        fullDescription: "Fokus pada kesehatan keluarga dengan membasmi alergen tak kasat mata. Menggunakan mesin Hydro Vacuum khusus untuk menyedot tungau (dust mite) di soft furniture.",
+        whatsappMessage: "Halo Admin, saya tertarik paket *Elite (Hydro Vacuum)* untuk sedot tungau kasur/sofa.",
         isPopular: false,
+        scope: [
+            "Hydro Vacuum Kasur (Sedot Tungau)",
+            "Hydro Vacuum Sofa & Gorden",
+            "Fogging Disinfektan ruangan",
+            "Sterilisasi Bakteri & Virus",
+            "Aromaterapi relaksasi"
+        ],
+        tools: [
+            "Mesin Hydro Vacuum (Hyla/Sirena)",
+            "Mesin Fogging (Asap)",
+            "Cairan Disinfektan (Food Grade)",
+            "Essential Oil Aromatherapy",
+            "UV-C Light Sterilizer (Opsional)"
+        ],
         link: "service-detail.html?id=elite"
     },
 
     // =================================================
-    // KATEGORI TAMBAHAN (Ala Carte / Satuan)
+    // KATEGORI TAMBAHAN (ALA CARTE)
     // =================================================
     {
         id: "toilet",
@@ -56,9 +108,25 @@ const servicesData = [
         icon: "fas fa-toilet", 
         price: "150rb",
         unit: "/ unit",
-        description: "Spesialis kerak membandel! Mengembalikan kilau kamar mandi Anda, bebas jamur kaca dan noda kekuningan yang sulit hilang.",
-        isPopular: true, // Best Seller kategori Ala Carte
+        description: "Spesialis kerak membandel! Mengembalikan kilau kamar mandi Anda.",
+        fullDescription: "Layanan restorasi kamar mandi. Fokus 100% untuk menghilangkan kerak air, jamur kaca, dan noda kekuningan yang tidak mempan disikat biasa.",
+        whatsappMessage: "Halo, kamar mandi saya berkerak. Mau pesan layanan *Beres.in Toilet*.",
+        isPopular: true, 
         badgeText: "Ampuh Lawan Kerak",
+        scope: [
+            "Cleaning kerak lantai & dinding",
+            "Poles Sanitary (Kloset/Wastafel)",
+            "Glass Scrub (Jamur Kaca)",
+            "Poles Kran (Chrome)",
+            "Cleaning Exhaust Fan"
+        ],
+        tools: [
+            "Mesin Polisher Tangan (Hand Polisher)",
+            "Chemical Anti-Kerak Khusus",
+            "Sikat Detail (Grout Brush)",
+            "Squeegee (Pembersih Kaca)",
+            "Microfiber Khusus Kaca"
+        ],
         link: "service-detail.html?id=toilet"
     },
     {
@@ -69,8 +137,24 @@ const servicesData = [
         icon: "fas fa-couch",
         price: "50rb",
         unit: "/ dudukan",
-        description: "Sofa kotor, bernoda, atau bau apek? Kami cuci menggunakan metode ekstraksi vakum. Mengangkat kotoran dari dalam busa. Kering 80%.",
+        description: "Cuci sofa metode basah untuk angkat noda & bau apek.",
+        fullDescription: "Menggunakan metode Wet Extraction (Cuci Basah) untuk membilas kotoran di dalam busa. Pengeringan mencapai 80% (tinggal diangin-anginkan).",
+        whatsappMessage: "Halo, saya mau *Cuci Sofa* saya yang kotor. Bisa datang kapan?",
         isPopular: false,
+        scope: [
+            "Dry Vacuum (Debu Permukaan)",
+            "Spotting (Sikat Noda)",
+            "Wet Extraction (Bilas Mesin)",
+            "Penyedotan air kotor",
+            "Finishing Parfum"
+        ],
+        tools: [
+            "Mesin Extractor (Wet Vacuum)",
+            "Sikat Sofa Lembut",
+            "Shampoo Sofa (Low Foam)",
+            "Spot Remover Chemical",
+            "Blower (Pengering Portable)"
+        ],
         link: "service-detail.html?id=sofa"
     },
     {
@@ -81,8 +165,24 @@ const servicesData = [
         icon: "fas fa-fire-burner", 
         price: "200rb",
         unit: "/ paket",
-        description: "Detailing area masak dari cipratan minyak menahun. Meliputi kompor, cooker hood, dinding backsplash, dan sink cuci piring.",
+        description: "Detailing area masak dari cipratan minyak menahun.",
+        fullDescription: "Membersihkan residu minyak yang menempel di area memasak Anda menggunakan degreaser khusus food-safe. Dapur jadi kesat dan higienis kembali.",
+        whatsappMessage: "Halo Admin, dapur saya berminyak banget. Mau pesan paket *Beres.in Dapur*.",
         isPopular: false,
+        scope: [
+            "Degreasing Kompor & Tombol",
+            "Cleaning Cooker Hood",
+            "Sikat dinding (Backsplash)",
+            "Poles Sink & Kran",
+            "Lap Kabinet Luar"
+        ],
+        tools: [
+            "Steam Cleaner (Uap Panas)",
+            "Scraper (Kape Plastik)",
+            "Sikat Kawat Halus",
+            "Cairan Degreaser (Food Safe)",
+            "Spons Heavy Duty"
+        ],
         link: "service-detail.html?id=dapur"
     },
     {
@@ -93,8 +193,24 @@ const servicesData = [
         icon: "fas fa-snowflake", 
         price: "75rb",
         unit: "/ unit",
-        description: "Kulkas bau dan berantakan? Kami cuci rak-raknya, buang makanan expired, dan sterilkan agar makanan tetap segar dan sehat.",
+        description: "Sterilisasi kulkas agar makanan tetap segar dan sehat.",
+        fullDescription: "Kami mensterilkan kulkas Anda dari bakteri Salmonella & E.coli, membuang bunga es, dan menata ulang isinya agar rapi.",
+        whatsappMessage: "Halo, mau pesan layanan *Bersih Kulkas (Fridge Detox)*.",
         isPopular: false,
+        scope: [
+            "Keluarkan isi kulkas",
+            "Sortir makanan expired",
+            "Cuci rak & laci",
+            "Lap body dalam/luar",
+            "Organizing (Penataan)"
+        ],
+        tools: [
+            "Cooler Box (Tempat Sementara)",
+            "Cairan Sanitizer (Food Grade)",
+            "Lap Kanebo & Microfiber",
+            "Sikat Botol Kecil",
+            "Penghilang Bau Alami"
+        ],
         link: "service-detail.html?id=kulkas"
     },
     {
@@ -105,8 +221,24 @@ const servicesData = [
         icon: "fas fa-bed", 
         price: "35rb",
         unit: "/ kamar",
-        description: "Versi Lite dari paket Reguler khusus kamar kost (max 3x4m). Cukup sapu, pel, rapikan sprei, dan angkut sampah. Murah meriah!",
+        description: "Versi Lite paket Reguler khusus kamar kost (max 3x4m).",
+        fullDescription: "Solusi cepat (max 30 menit) untuk membereskan kekacauan di kamar kost. Syarat: Ukuran kamar maksimal 3x4 meter.",
+        whatsappMessage: "Halo kak, saya anak kost mau pesan *Beres.in Kamar* yang 35rb.",
         isPopular: false,
+        scope: [
+            "Sapu lantai kamar",
+            "Pel lantai dengan pewangi",
+            "Rapikan sprei / Bedcover",
+            "Angkut sampah",
+            "Lap meja belajar"
+        ],
+        tools: [
+            "Sapu & Pel Set",
+            "Plastik Sampah Hitam",
+            "Lap Microfiber",
+            "Cairan Pel Wangi",
+            "Kemoceng"
+        ],
         link: "service-detail.html?id=kamar"
     },
     {
@@ -114,11 +246,27 @@ const servicesData = [
         category: "tambahan",
         title: "Beres.in Kantor",
         subtitle: "Office & Commercial",
-        icon: "fas fa-building", // Ikon Gedung Kantor
+        icon: "fas fa-building", 
         price: "20rb",
         unit: "/ m²",
-        description: "Lingkungan kerja bersih = Produktivitas naik. General cleaning untuk area kerja, pantry, dan ruang meeting. Tersedia opsi kontrak bulanan.",
+        description: "General cleaning untuk area kerja, pantry, dan ruang meeting.",
+        fullDescription: "General cleaning area kerja, pantry, dan ruang meeting. Tersedia opsi berlangganan bulanan dengan invoice resmi.",
+        whatsappMessage: "Halo, saya dari perusahaan [Nama PT]. Mau tanya untuk cleaning *Kantor/Ruko*.",
         isPopular: false,
+        scope: [
+            "Vacuum karpet / Pel lantai",
+            "Lap meja kerja & kursi",
+            "Bersihkan pantry",
+            "Bersihkan toilet kantor",
+            "Lap kaca partisi"
+        ],
+        tools: [
+            "Vacuum Cleaner Commercial",
+            "Trolley Kebersihan",
+            "Mop Set Besar",
+            "Warning Sign (Lantai Basah)",
+            "Chemical Glass & Floor"
+        ],
         link: "service-detail.html?id=kantor"
     }
 ];

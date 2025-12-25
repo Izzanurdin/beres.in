@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Layanan - Beres.in</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">beres<span class="dot-in">.in</span></a>
+            <nav class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="services.html">Layanan</a>
+            </nav>
+            <a href="contact.html" class="btn btn-primary">Bantuan</a>
+        </div>
+    </header>
+
+    <main class="detail-page-wrapper">
+        <div class="container">
+            
+            <div class="breadcrumb">
+                <a href="index.html">Beranda</a> / 
+                <a href="services.html">Layanan</a> / 
+                <span id="breadcrumb-current">Memuat...</span>
+            </div>
+
+            <div class="detail-grid">
+                
+                <div class="detail-content">
+                    <div class="detail-image-wrapper">
+                        <i id="detail-icon" class="fas fa-spinner fa-spin"></i>
+                    </div>
+
+                    <div class="detail-text">
+                        <div id="detail-badge-container"></div> 
+                        
+                        <h1 id="detail-title">Memuat Layanan...</h1>
+                        <p class="detail-subtitle" id="detail-subtitle">Mohon tunggu sebentar</p>
+                        
+                        <div class="divider"></div>
+
+                        <h3>Tentang Layanan Ini</h3>
+                        <p id="detail-desc">Deskripsi layanan akan muncul di sini.</p>
+
+                        <h3>Apa yang Kami Kerjakan?</h3>
+                        <ul class="check-list">
+                            <li>Tenaga kerja profesional & terverifikasi.</li>
+                            <li>Peralatan lengkap dari kami (Vacuum, lap, chemical).</li>
+                            <li>Garansi kepuasan (Pengerjaan ulang jika kurang bersih).</li>
+                            <li>Protokol kesehatan & ramah lingkungan.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="detail-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Biaya Layanan</h3>
+                        <div class="price-tag">
+                            <span class="currency">Rp</span>
+                            <span class="amount" id="detail-price">0</span>
+                            <span class="unit" id="detail-unit">/ -</span>
+                        </div>
+                        
+                        <p class="price-note">Harga sudah termasuk alat & transport (jarak < 5km).</p>
+
+                        <hr>
+
+                        <div class="cta-area">
+                            <a href="#" id="wa-link" target="_blank" class="btn btn-whatsapp full-width">
+                                <i class="fab fa-whatsapp"></i> Pesan Sekarang
+                            </a>
+                            <p class="secure-info"><i class="fas fa-shield-alt"></i> Pembayaran Aman setelah selesai.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 Beres.in</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/detail.js"></script> </body>
+</html>
