@@ -406,6 +406,7 @@
     border-radius: 20px;
     /* Padding atas besar (60px) biar teks ga nabrak foto */
     padding: 60px 30px 40px 30px; 
+    margin-top: 40px;
     position: relative;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
