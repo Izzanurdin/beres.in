@@ -72,9 +72,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Ambil nilai slider saat ini (0 sampai 100)
             const sliderPos = e.target.value;
 
-            // A. Ubah lebar gambar 'After' sesuai posisi slider
-            // Jika slider di 50%, maka gambar After lebarnya 50%
-            imgAfterWrapper.style.width = `${sliderPos}%`;
+            // --- LOGIKA BARU: CLIP-PATH ---
+            // Alih-alih mengubah width, kita ubah area potongnya.
+            // Rumus: Potong dari KANAN sebesar (100 - posisi slider)%
+            // Contoh: Slider di 70%, berarti potong 30% dari kanan.
+            imgAfterWrapper.style.clipPath = `inset(0 ${100 - sliderPos}% 0 0)`;
 
             // B. Pindahkan tombol bulat (Handle) mengikuti posisi slider
             sliderHandle.style.left = `${sliderPos}%`;

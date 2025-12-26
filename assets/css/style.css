@@ -1137,9 +1137,25 @@ footer {
 
 /* Logic Gambar After (Layer Depan) */
 .img-wrapper.after {
-    width: 50%; /* Nilai awal, nanti diubah JS */
+    width: 100%; /* Nilai awal, nanti diubah JS */
     z-index: 2;
     border-right: 3px solid #ffffff; /* Garis pemisah vertikal putih */
+    /* Kita gunakan clip-path untuk memotong, bukan width */
+    /* Inset: (atas, kanan, bawah, kiri) */
+    /* Kita potong 50% dari kanan sebagai posisi awal */
+    clip-path: inset(0 50% 0 0);
+}
+
+/* Garis Pemisah (Opsional: Memberi efek border putih pada potongan) */
+.img-wrapper.after::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0; /* Tempel di sisi potongan */
+    width: 3px;
+    background: #fff;
+    z-index: 3;
 }
 
 /* Label (Before / After) */
