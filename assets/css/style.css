@@ -1026,25 +1026,6 @@ footer {
     box-shadow: 0 5px 15px rgba(0,0,0,0.03);
 }
 
-/* Kotak Gambar/Icon */
-.detail-image-wrapper {
-    width: 100%;
-    height: 300px; /* Tinggi gambar */
-    background-color: #e8f5e9; /* Hijau muda pudar */
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 30px;
-    overflow: hidden;
-}
-
-.detail-image-wrapper i {
-    font-size: 6rem;
-    color: var(--color-primary);
-    opacity: 0.8;
-}
-
 /* Tipografi Konten */
 .detail-text h1 {
     font-size: 2.2rem;
@@ -1083,6 +1064,7 @@ footer {
 .check-list {
     list-style: none;
     padding: 0;
+    margin-bottom: 10px;
 }
 
 .check-list li {
@@ -1114,6 +1096,107 @@ footer {
     border-radius: 6px;
     margin-bottom: 15px;
     border: 1px solid #dcfce7;
+}
+
+/* =========================================
+   IMAGE COMPARISON SLIDER STYLES
+   (Menggantikan .detail-image-wrapper lama)
+   ========================================= */
+
+.comparison-container {
+    position: relative;
+    width: 100%;
+    /* Mengatur rasio gambar agar konsisten (16:9) */
+    aspect-ratio: 16/9; 
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    background-color: #f0f0f0; /* Placeholder warna saat gambar loading */
+    user-select: none; /* Mencegah teks terpilih saat digeser */
+}
+
+/* Wrapper Gambar */
+.img-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Fallback */
+    overflow: hidden;
+}
+
+.img-wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Gambar akan memenuhi kotak tanpa gepeng */
+    object-position: center;
+}
+
+/* Logic Gambar After (Layer Depan) */
+.img-wrapper.after {
+    width: 50%; /* Nilai awal, nanti diubah JS */
+    z-index: 2;
+    border-right: 3px solid #ffffff; /* Garis pemisah vertikal putih */
+}
+
+/* Label (Before / After) */
+.label {
+    position: absolute;
+    top: 20px;
+    padding: 6px 14px;
+    background: rgba(0, 0, 0, 0.65); /* Hitam transparan */
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 30px;
+    z-index: 3;
+    pointer-events: none; /* Agar tidak menghalangi klik */
+    backdrop-filter: blur(4px); /* Efek blur estetik */
+    letter-spacing: 0.5px;
+}
+
+.label-before { right: 20px; }
+.label-after { left: 20px; }
+
+/* Input Range (Controller Transparan) */
+.slider-range {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Tidak terlihat */
+    cursor: ew-resize; /* Kursor panah kiri-kanan */
+    z-index: 10; /* Paling atas agar bisa disentuh */
+    margin: 0;
+}
+
+/* Handle Bulat di Tengah (Hiasan Visual) */
+.slider-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%; /* Nilai awal, nanti ikut JS */
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color, #27ae60); /* Mengambil warna hijau tema */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 5;
+    pointer-events: none; /* Tembus ke slider range */
+}
+
+/* Animasi Hover Kecil pada Handle */
+.comparison-container:hover .slider-handle {
+    transform: translate(-50%, -50%) scale(1.1);
+    transition: transform 0.2s ease;
 }
 
 /* --- KOLOM KANAN (SIDEBAR STICKY) --- */

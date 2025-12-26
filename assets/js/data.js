@@ -19,7 +19,6 @@ const servicesData = [
         fullDescription: "Layanan housekeeping standar hotel untuk menjaga kebersihan harian tempat tinggalmu. Cocok untuk kamu yang sibuk bekerja dan ingin pulang ke rumah yang rapi, wangi, dan bebas debu permukaan.",
         whatsappMessage: "Halo Admin Beres.in, saya mau pesan layanan *Reguler Cleaning*. Apakah slot tersedia?",
         isPopular: false,
-        // 👇 DATA DETAIL (Scope vs Tools)
         scope: [
             "Menyapu & Mengepel seluruh lantai",
             "Dusting (lap debu) furnitur & meja",
@@ -35,7 +34,9 @@ const servicesData = [
             "Cairan Pembersih Lantai (Eco)",
             "Cairan Kaca (Glass Cleaner)"
         ],
-        link: "service-detail.html?id=reguler"
+        link: "service-detail.html?id=reguler",
+        imageBefore: "assets/img/services/packages/reguler/img-before.png",
+        imageAfter: "assets/img/services/packages/reguler/img-after.png"
     },
     {
         id: "premium",

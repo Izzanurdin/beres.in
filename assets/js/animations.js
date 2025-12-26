@@ -57,4 +57,27 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }, 100); // Delay 100ms agar aman menunggu rendering main.js
+
+    // --- 3. LOGIKA IMAGE COMPARISON SLIDER ---
+    // 1. Ambil elemen-elemen yang dibutuhkan
+    const sliderRange = document.getElementById('comparison-range');
+    const imgAfterWrapper = document.getElementById('img-after-wrapper');
+    const sliderHandle = document.getElementById('slider-handle');
+
+    // 2. Cek apakah elemen ada (supaya tidak error di halaman lain yang tidak ada slidernya)
+    if (sliderRange && imgAfterWrapper && sliderHandle) {
+        
+        // 3. Tambahkan Event Listener saat input digeser
+        sliderRange.addEventListener('input', (e) => {
+            // Ambil nilai slider saat ini (0 sampai 100)
+            const sliderPos = e.target.value;
+
+            // A. Ubah lebar gambar 'After' sesuai posisi slider
+            // Jika slider di 50%, maka gambar After lebarnya 50%
+            imgAfterWrapper.style.width = `${sliderPos}%`;
+
+            // B. Pindahkan tombol bulat (Handle) mengikuti posisi slider
+            sliderHandle.style.left = `${sliderPos}%`;
+        });
+    }
 });

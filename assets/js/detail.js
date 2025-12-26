@@ -26,9 +26,21 @@ document.addEventListener('DOMContentLoaded', () => {
     document.title = `${service.title} - Beres.in`; // Ubah Judul Tab Browser
     document.getElementById('breadcrumb-current').innerText = service.title;
     
-    // Icon Utama
-    const iconContainer = document.getElementById('detail-icon');
-    iconContainer.className = service.icon; // Ganti class FontAwesome
+    // Gambar Sebelum & Sesudah
+    const imgBefore = document.getElementById('img-before');
+    const imgAfter = document.getElementById('img-after');
+
+    // Kalau elemen gambar ada, isi src-nya
+    if (imgBefore && imgAfter) {
+        // Ambil gambar dari data.js, atau pakai gambar default jika kosong
+        // Pastikan file 'default-before.jpg' ada di folder img sebagai cadangan
+        imgBefore.src = service.imageBefore || 'assets/img/default-before.jpg';
+        imgAfter.src = service.imageAfter || 'assets/img/default-after.jpg';
+        
+        // Update alt text agar bagus untuk SEO
+        imgBefore.alt = `Kondisi Sebelum ${service.title}`;
+        imgAfter.alt = `Kondisi Sesudah ${service.title}`;
+    }
 
     // Judul & Subjudul
     document.getElementById('detail-title').innerText = service.title;
@@ -59,39 +71,54 @@ document.addEventListener('DOMContentLoaded', () => {
     // Kita cari elemen list yang sudah ada di HTML
     const listContainer = document.querySelector('.check-list');
     
-    // Kosongkan list bawaan HTML (Placeholder)
-    listContainer.innerHTML = '';
-
-    // Render Scope (Lingkup Pekerjaan)
-    if (service.scope && service.scope.length > 0) {
-        service.scope.forEach(item => {
-            const li = document.createElement('li');
-            li.innerText = item;
-            listContainer.appendChild(li);
-        });
-    }
-
-    // Render Tools (Peralatan) - Kita buat elemen baru di bawah Scope
-    if (service.tools && service.tools.length > 0) {
-        // Buat Judul Baru
-        const toolsHeader = document.createElement('h3');
-        toolsHeader.innerText = "Peralatan & Chemical";
-        toolsHeader.style.marginTop = "30px"; // Sedikit jarak
+    // Bersihkan container dulu
+    if (listContainer) {
+        listContainer.innerHTML = ''; // Reset isi list
         
-        // Buat List Baru
-        const toolsList = document.createElement('ul');
-        toolsList.className = 'check-list'; // Pakai style yang sama (Centang Hijau)
-        
-        // Loop Tools
-        service.tools.forEach(tool => {
-            const li = document.createElement('li');
-            li.innerHTML = `<span style="color:#555">${tool}</span>`; // Sedikit beda warna teks
-            toolsList.appendChild(li);
-        });
+        // Hapus elemen "Peralatan" jika sudah ada (supaya tidak duplikat saat reload)
+        // Kita cari sibling (saudara) dari listContainer yang mungkin sisa render sebelumnya
+        let nextNode = listContainer.nextElementSibling;
+        while (nextNode) {
+            const toRemove = nextNode;
+            nextNode = nextNode.nextElementSibling;
+            if(toRemove.tagName === 'H3' || toRemove.tagName === 'UL') {
+                 toRemove.remove();
+            } else {
+                break; // Stop jika ketemu elemen lain (misal sidebar)
+            }
+        }
 
-        // Masukkan (Append) setelah list pertama
-        listContainer.parentNode.appendChild(toolsHeader);
-        listContainer.parentNode.appendChild(toolsList);
+
+        // Render Scope (Lingkup Pekerjaan)
+        if (service.scope && service.scope.length > 0) {
+            service.scope.forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = item;
+                listContainer.appendChild(li);
+            });
+        }
+
+        // Render Tools (Peralatan) - Kita buat elemen baru di bawah Scope
+        if (service.tools && service.tools.length > 0) {
+            // Buat Judul Baru
+            const toolsHeader = document.createElement('h3');
+            toolsHeader.innerText = "Peralatan & Chemical";
+            toolsHeader.style.marginTop = "30px"; // Sedikit jarak
+            
+            // Buat List Baru
+            const toolsList = document.createElement('ul');
+            toolsList.className = 'check-list'; // Pakai style yang sama (Centang Hijau)
+            
+            // Loop Tools
+            service.tools.forEach(tool => {
+                const li = document.createElement('li');
+                li.innerHTML = `<span style="color:#555">${tool}</span>`; // Sedikit beda warna teks
+                toolsList.appendChild(li);
+            });
+
+            // Insert after scope list
+            listContainer.parentNode.insertBefore(toolsHeader, listContainer.nextSibling);
+            listContainer.parentNode.insertBefore(toolsList, toolsHeader.nextSibling);
+        }
     }
-
 });

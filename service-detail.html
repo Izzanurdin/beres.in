@@ -6,7 +6,7 @@
     <title>Detail Layanan - Beres.in</title>
     
     <link rel="icon" href="assets/img/icons/favicon.png" type="image/png">
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -39,8 +39,23 @@
                 
                 <div class="detail-content">
                     
-                    <div class="detail-image-wrapper">
-                        <i id="detail-icon" class="fas fa-spinner fa-spin"></i>
+                    <div class="comparison-container">
+                        <div class="img-wrapper before">
+                            <img src="assets/img/room-before.jpg" alt="Before Cleaning" id="img-before">
+                            <span class="label label-before">Before</span>
+                        </div>
+
+                        <div class="img-wrapper after" id="img-after-wrapper">
+                            <img src="assets/img/room-after.jpg" alt="After Cleaning" id="img-after">
+                            <span class="label label-after">After</span>
+                        </div>
+
+                        <div class="slider-handle" id="slider-handle">
+                            <div class="handle-line"></div>
+                            <div class="handle-circle"><i class="fas fa-arrows-alt-h"></i></div>
+                        </div>
+
+                        <input type="range" min="0" max="100" value="50" class="slider-range" id="comparison-range">
                     </div>
 
                     <div class="detail-text">
@@ -139,5 +154,6 @@
 
     <script src="assets/js/data.js"></script>
     <script src="assets/js/detail.js"></script>
+    <script src="assets/js/animations.js"></script>
 </body>
 </html>
