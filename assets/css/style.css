@@ -1135,11 +1135,17 @@ footer {
     object-position: center;
 }
 
+/* Logic Gambar Before (Layer Belakang) */
+.img-wrapper.before {
+    width: 100%;
+    z-index: 1;
+}
 /* Logic Gambar After (Layer Depan) */
 .img-wrapper.after {
-    width: 100%; /* Nilai awal, nanti diubah JS */
+    width: 100%; 
     z-index: 2;
-    border-right: 3px solid #ffffff; /* Garis pemisah vertikal putih */
+    border-right: 3px solid #ffffff; 
+    /* Garis pemisah vertikal putih */
     /* Kita gunakan clip-path untuk memotong, bukan width */
     /* Inset: (atas, kanan, bawah, kiri) */
     /* Kita potong 50% dari kanan sebagai posisi awal */
@@ -1168,7 +1174,6 @@ footer {
     font-size: 0.85rem;
     font-weight: 600;
     border-radius: 30px;
-    z-index: 3;
     pointer-events: none; /* Agar tidak menghalangi klik */
     backdrop-filter: blur(4px); /* Efek blur estetik */
     letter-spacing: 0.5px;
@@ -1186,7 +1191,7 @@ footer {
     height: 100%;
     opacity: 0; /* Tidak terlihat */
     cursor: ew-resize; /* Kursor panah kiri-kanan */
-    z-index: 10; /* Paling atas agar bisa disentuh */
+    z-index: 20; /* Paling atas agar bisa disentuh */
     margin: 0;
 }
 
@@ -1194,7 +1199,7 @@ footer {
 .slider-handle {
     position: absolute;
     top: 50%;
-    left: 50%; /* Nilai awal, nanti ikut JS */
+    left: 50%; 
     transform: translate(-50%, -50%);
     width: 44px;
     height: 44px;
@@ -1205,7 +1210,7 @@ footer {
     justify-content: center;
     color: var(--primary-color, #27ae60); /* Mengambil warna hijau tema */
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    z-index: 5;
+    z-index: 10;
     pointer-events: none; /* Tembus ke slider range */
 }
 

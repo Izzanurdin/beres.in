@@ -63,16 +63,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const sliderRange = document.getElementById('comparison-range');
     const imgAfterWrapper = document.getElementById('img-after-wrapper');
     const sliderHandle = document.getElementById('slider-handle');
+    const labelBefore = document.querySelector('.label-before');
 
     // 2. Cek apakah elemen ada (supaya tidak error di halaman lain yang tidak ada slidernya)
-    if (sliderRange && imgAfterWrapper && sliderHandle) {
-        
+    if (sliderRange && imgAfterWrapper && sliderHandle && labelBefore) {
         // 3. Tambahkan Event Listener saat input digeser
         sliderRange.addEventListener('input', (e) => {
             // Ambil nilai slider saat ini (0 sampai 100)
             const sliderPos = e.target.value;
 
-            // --- LOGIKA BARU: CLIP-PATH ---
+            // --- A.  LOGIKA CLIP-PATH AFTER ---
             // Alih-alih mengubah width, kita ubah area potongnya.
             // Rumus: Potong dari KANAN sebesar (100 - posisi slider)%
             // Contoh: Slider di 70%, berarti potong 30% dari kanan.
