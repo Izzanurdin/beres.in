@@ -97,7 +97,9 @@ const servicesData = [
             "Essential Oil Aromatherapy",
             "UV-C Light Sterilizer (Opsional)"
         ],
-        link: "service-detail.html?id=elite"
+        link: "service-detail.html?id=elite",
+        imageBefore: "assets/img/services/packages/elite/img-before.png",
+        imageAfter: "assets/img/services/packages/elite/img-after.png"
     },
 
     // =================================================
