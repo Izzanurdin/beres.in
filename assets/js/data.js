@@ -67,7 +67,9 @@ const servicesData = [
             "Degreaser (Penghancur Minyak)",
             "Tangga Lipat (Reach Tool)"
         ],
-        link: "service-detail.html?id=premium"
+        link: "service-detail.html?id=premium",
+        imageBefore: "assets/img/services/packages/premium/img-before.png",
+        imageAfter: "assets/img/services/packages/premium/img-after.png"
     },
     {
         id: "elite",
