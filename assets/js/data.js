@@ -162,7 +162,9 @@ const servicesData = [
             "Spot Remover Chemical",
             "Blower (Pengering Portable)"
         ],
-        link: "service-detail.html?id=sofa"
+        link: "service-detail.html?id=sofa",
+        imageBefore: "assets/img/services/packages/sofa/img-before.jpg",
+        imageAfter: "assets/img/services/packages/sofa/img-after.jpg"
     },
     {
         id: "dapur",
