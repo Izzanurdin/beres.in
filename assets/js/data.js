@@ -192,7 +192,9 @@ const servicesData = [
             "Cairan Degreaser (Food Safe)",
             "Spons Heavy Duty"
         ],
-        link: "service-detail.html?id=dapur"
+        link: "service-detail.html?id=dapur",
+        imageBefore: "assets/img/services/packages/dapur/img-before.jpg",
+        imageAfter: "assets/img/services/packages/dapur/img-after.png"
     },
     {
         id: "kulkas",
