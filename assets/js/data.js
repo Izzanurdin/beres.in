@@ -282,7 +282,9 @@ const servicesData = [
             "Warning Sign (Lantai Basah)",
             "Chemical Glass & Floor"
         ],
-        link: "service-detail.html?id=kantor"
+        link: "service-detail.html?id=kantor",
+        imageBefore: "assets/img/services/packages/kantor/img-before.jpg",
+        imageAfter: "assets/img/services/packages/kantor/img-after.jpg"
     }
 ];
 
