@@ -222,7 +222,9 @@ const servicesData = [
             "Sikat Botol Kecil",
             "Penghilang Bau Alami"
         ],
-        link: "service-detail.html?id=kulkas"
+        link: "service-detail.html?id=kulkas",
+        imageBefore: "assets/img/services/packages/kulkas/img-before.png",
+        imageAfter: "assets/img/services/packages/kulkas/img-after.png"
     },
     {
         id: "kamar",
