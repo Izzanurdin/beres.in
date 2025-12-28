@@ -132,7 +132,9 @@ const servicesData = [
             "Squeegee (Pembersih Kaca)",
             "Microfiber Khusus Kaca"
         ],
-        link: "service-detail.html?id=toilet"
+        link: "service-detail.html?id=toilet",
+        imageBefore: "assets/img/services/packages/toilet/img-before.jpg",
+        imageAfter: "assets/img/services/packages/toilet/img-after.jpg"
     },
     {
         id: "sofa",
