@@ -252,7 +252,9 @@ const servicesData = [
             "Cairan Pel Wangi",
             "Kemoceng"
         ],
-        link: "service-detail.html?id=kamar"
+        link: "service-detail.html?id=kamar",
+        imageBefore: "assets/img/services/packages/kamar/img-before.jpg",
+        imageAfter: "assets/img/services/packages/kamar/img-after.jpg"
     },
     {
         id: "kantor",
