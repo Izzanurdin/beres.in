@@ -158,6 +158,11 @@
     display: none;
 }
 
+/* Sembunyikan tombol mobile CTA secara default di Desktop */
+.mobile-cta-btn {
+    display: none;
+}
+
 /* -----------------------------------------
    4. HERO SECTION (Banner Utama)
    ----------------------------------------- */

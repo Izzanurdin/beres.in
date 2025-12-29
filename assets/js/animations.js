@@ -3,16 +3,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const menuBtn = document.getElementById('mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
 
+        if (menuBtn && navLinks) {
         menuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-
-    // (Opsional) Tutup menu saat salah satu link diklik
+            // 1. Buka/Tutup Menu (Ini sudah jalan)
+            navLinks.classList.toggle('active');
+            
+            // 2. Ubah Ikon Burger jadi X (INI YANG KEMUNGKINAN HILANG)
+            // Tanpa baris ini, CSS animasi hamburger tidak akan pernah dipanggil
+            menuBtn.classList.toggle('active'); 
+        });
+    }
+    
+    // (Opsional) Tutup menu & kembalikan ikon saat link diklik
     const links = document.querySelectorAll('.nav-links a');
     links.forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
-            menuBtn.classList.remove('active'); // Balikkan ikon jadi burger lagi
+            menuBtn.classList.remove('active'); // Balikkan jadi garis tiga
         });
     });
 
