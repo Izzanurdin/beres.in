@@ -61,7 +61,6 @@
 
 
     /* --- C. ANIMASI HAMBURGER (Sistem Flexbox) --- */
-    /* Pastikan tidak ada kode 'position: absolute' yang tersisa di sini */
     
     .mobile-menu-icon {
         display: flex;       
@@ -114,25 +113,103 @@
 
 
     /* =========================================
-       3. HERO SECTION (Banner Utama)
-       ========================================= */
-    .hero-section {
-        /* Balik urutan: Gambar di atas, Teks di bawah */
+   PERBAIKAN HERO & FEATURES (MOBILE FIX)
+   Masukkan di dalam @media (max-width: 768px)
+   ========================================= */
+
+    /* --- 1. HERO SECTION --- */
+    
+    /* Container Utama Hero */
+    .hero-content {
+        /* Ubah layout: Gambar di Atas, Teks di Bawah */
+        display: flex;
         flex-direction: column-reverse; 
+        align-items: center;
         text-align: center;
-        padding: 40px 0;
-        height: auto;
+        padding-top: 20px;
+        padding-bottom: 40px;
+        gap: 30px;
     }
 
-    .hero-text {
+    /* Area Teks */
+    .text-area {
         width: 100%;
-        margin-top: 30px;
-        padding-right: 0;
+        padding: 0 15px; /* Jarak aman kiri-kanan */
     }
 
-    .hero-image {
+    .text-area h1 {
+        font-size: 2rem; /* Ukuran judul pas di HP */
+        line-height: 1.3;
+        margin-bottom: 15px;
+    }
+
+    .text-area p {
+        font-size: 1rem;
+        padding: 0 10px; /* Fokuskan paragraf */
+        color: var(--color-text-body);
+        margin-bottom: 30px;
+    }
+
+    /* Area Gambar */
+    .image-area {
         width: 100%;
+        display: flex;
         justify-content: center;
+        margin-bottom: 0;
+    }
+
+    .hero-img {
+        width: 80%;       /* Lebar gambar 80% layar */
+        max-width: 320px; /* Batas maksimal */
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    /* --- 2. PERBAIKAN OVERFLOW BADGE/TOMBOL --- */
+    
+    .hero-buttons {
+        display: flex;
+        flex-direction: column; /* Tombol & Badge tumpuk ke bawah */
+        align-items: center;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px; /* Lebar tombol dibatasi */
+        justify-content: center;
+        margin-bottom: 25px; /* Jarak ke badge di bawahnya */
+    }
+
+    /* INI SOLUSI OVERFLOW NYA: */
+    .trust-badge {
+        display: flex;
+        flex-wrap: wrap;       /* PENTING: Izinkan turun ke bawah jika sempit */
+        justify-content: center; 
+        gap: 15px;             /* Jarak antar badge */
+        width: 100%;
+    }
+
+    .trust-badge span {
+        font-size: 0.9rem;
+        white-space: nowrap; /* Teks dalam 1 badge jangan putus */
+        background: rgba(255, 255, 255, 0.5); /* Opsional: background tipis */
+        padding: 5px 10px;
+        border-radius: 15px;
+    }
+
+    /* --- 3. FEATURES SECTION (Grid ke Stack) --- */
+    
+    .features-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Paksa 1 kolom ke bawah */
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .feature-card {
+        padding: 20px; /* Card lebih compact di HP */
     }
 
 
@@ -229,4 +306,5 @@
     /* Buat semua tombol penting menjadi Lebar Penuh (Full Width) */
     .btn-block-style, 
     .btn-whatsapp, 
-    .btn-primary {
+    .btn-primary 
+}
