@@ -395,7 +395,6 @@
     .testi-avatar { margin: 0 0 15px 0; }
     .quote-icon { display: none; } /* Sembunyikan ikon kutipan besar */
 
-
     /* =========================================
        7. FOOTER SECTION
        ========================================= */
@@ -417,6 +416,144 @@
     .contact-item, 
     .social-icons { 
         justify-content: center; 
+    }
+
+    /* =========================================
+   PERBAIKAN HALAMAN KONTAK (MOBILE)
+   Masukkan di dalam @media (max-width: 768px)
+   ========================================= */
+
+    /* 1. Ubah Grid Menjadi Stack (Tumpuk ke Bawah) */
+    .contact-grid-wrapper {
+        display: grid;
+        grid-template-columns: 1fr; /* HANYA 1 KOLOM */
+        gap: 40px; /* Jarak antara Kartu Kontak dan FAQ */
+    }
+
+    /* 2. Styling Kartu Kontak di HP */
+    .contact-info-card {
+        padding: 25px 20px; /* Padding sedikit dikecilkan */
+        /* Opsional: Jika ingin kartu memenuhi lebar layar */
+        width: 100%; 
+    }
+    
+    /* Perbaiki item info (alamat/email) biar tidak gepeng */
+    .info-item {
+        flex-direction: row; /* Tetap menyamping ikon & teksnya */
+        align-items: flex-start; /* Ikon sejajar dengan baris pertama teks */
+        padding: 15px;
+    }
+
+    .info-item .icon {
+        flex-shrink: 0; /* PENTING: Mencegah ikon mengecil/gepeng */
+    }
+
+    /* 3. Styling FAQ Wrapper */
+    .faq-wrapper {
+        padding-top: 0; /* Hapus padding atas karena sudah ada gap grid */
+    }
+    
+    .faq-wrapper h3 {
+        text-align: center; /* Judul FAQ rata tengah biar rapi */
+        margin-bottom: 20px;
+    }
+
+    /* Reset margin bawaan FAQ accordion agar pas di container */
+    .faq-accordion {
+        margin: 0; 
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Pertajam area klik FAQ di HP */
+    .faq-question {
+        font-size: 1rem; /* Ukuran font disesuaikan */
+        padding: 15px 0;
+    }
+    
+    .faq-icon {
+        font-size: 1.1rem;
+        margin-left: 10px; /* Jarak aman antara teks dan ikon + */
+    }
+
+    /* =========================================
+   PENYESUAIAN SIDEBAR & CTA (MOBILE)
+   Masukkan di dalam @media (max-width: 768px)
+   ========================================= */
+
+    /* 1. Reset Sticky Sidebar */
+    /* Di HP, sidebar tidak perlu sticky karena posisinya ada di paling bawah */
+    .detail-sidebar {
+        position: static; 
+        width: 100%;
+        margin-top: 0;
+        z-index: 1;
+    }
+
+    /* 2. Kecilkan Padding Kartu */
+    .sidebar-card {
+        padding: 20px 20px; /* Desktop: 35px -> Mobile: 20px */
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Shadow lebih tipis */
+    }
+
+    .sidebar-card h3 {
+        font-size: 1rem;
+        margin-bottom: 5px;
+        text-align: center; /* Judul rata tengah biar rapi */
+    }
+
+    /* 3. Kecilkan Ukuran Harga */
+    .price-tag {
+        justify-content: center; /* Tengahkan harga */
+        margin: 10px 0 15px 0;
+    }
+
+    .price-tag .amount {
+        font-size: 2.5rem; /* Desktop: 3.5rem -> Mobile: 2.5rem */
+    }
+
+    .price-tag .currency {
+        font-size: 1.1rem;
+        margin-top: 2px;
+    }
+
+    .price-tag .unit {
+        font-size: 0.9rem;
+    }
+
+    /* Catatan harga lebih ringkas */
+    .price-note {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+        text-align: center; /* Teks rata tengah */
+        border-left: none; /* Hapus garis samping */
+        border-top: 2px solid var(--color-primary); /* Ganti jadi garis atas */
+    }
+
+    /* 4. Adjust Tombol Pesan Sekarang */
+    .cta-area {
+        margin-top: 20px;
+    }
+
+    .sidebar-card .btn-whatsapp {
+        padding: 14px 15px; /* Desktop: 18px -> Mobile: 14px */
+        font-size: 1rem;    /* Desktop: 1.15rem -> Mobile: 1rem */
+        border-radius: 10px;
+    }
+    
+    .sidebar-card .btn-whatsapp i {
+        font-size: 1.2rem; /* Kecilkan ikon WA */
+    }
+
+    /* 5. Info Keamanan */
+    .secure-info {
+        font-size: 0.75rem;
+        margin-top: 10px;
+    }
+
+    .sidebar-card hr {
+        margin: 15px 0; /* Kurangi jarak garis pemisah */
     }
 }
 
