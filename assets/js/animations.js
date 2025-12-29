@@ -1,5 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
     // --- 1. FAQ ACCORDION LOGIC ---
     // (Murni interaksi UI, jadi cocok di sini)
     const faqButtons = document.querySelectorAll('.faq-question');

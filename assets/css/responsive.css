@@ -1,0 +1,204 @@
+/* ==========================================================================
+   RESPONSIVE STYLESHEET - BERES.IN
+   Best Practice: Mengelompokkan style berdasarkan ukuran layar (Media Query).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   A. TABLET & MOBILE DEVICES (Layar Max: 768px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+
+    /* =========================================
+       1. GLOBAL LAYOUT & TYPOGRAPHY
+       ========================================= */
+    .container {
+        width: 90%; /* Memberi jarak aman kiri-kanan agar tidak mepet layar */
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    h1 { font-size: 2rem; }   /* Kecilkan judul utama */
+    h2 { font-size: 1.6rem; } /* Kecilkan sub-judul */
+
+
+    /* =========================================
+       2. NAVIGATION BAR (Menu Hamburger)
+       ========================================= */
+    .navbar .container {
+        position: relative; /* Penting agar dropdown menu posisinya akurat */
+    }
+
+    /* Munculkan Tombol Hamburger (Garis Tiga) */
+    .mobile-menu-icon {
+        display: block; 
+        cursor: pointer;
+        z-index: 1002;
+    }
+
+    /* Styling Garis pada Ikon Hamburger */
+    .mobile-menu-icon span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background-color: var(--color-text-heading, #333);
+        margin: 6px 0;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    /* Ubah Link Menu menjadi Dropdown Vertikal */
+    .nav-links {
+        position: absolute;
+        top: 100%; /* Muncul persis di bawah header */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        
+        /* Ubah orientasi dari baris (row) ke kolom (column) */
+        flex-direction: column;
+        align-items: center;
+        
+        padding: 20px 0;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        border-top: 1px solid #f0f0f0;
+        
+        /* Default status: Sembunyi */
+        display: none; 
+    }
+
+    /* Class .active akan ditambahkan oleh JavaScript saat tombol diklik */
+    .nav-links.active {
+        display: flex;
+        animation: slideDown 0.3s ease forwards;
+    }
+
+    /* Styling item link di dalam menu mobile */
+    .nav-links a {
+        margin: 15px 0;
+        font-size: 1.1rem;
+        display: block;
+    }
+
+    /* Sembunyikan tombol CTA 'Pesan Sekarang' agar header tidak penuh */
+    .nav-cta {
+        display: none;
+    }
+
+
+    /* =========================================
+       3. HERO SECTION (Banner Utama)
+       ========================================= */
+    .hero-section {
+        /* Balik urutan: Gambar di atas, Teks di bawah */
+        flex-direction: column-reverse; 
+        text-align: center;
+        padding: 40px 0;
+        height: auto;
+    }
+
+    .hero-text {
+        width: 100%;
+        margin-top: 30px;
+        padding-right: 0;
+    }
+
+    .hero-image {
+        width: 100%;
+        justify-content: center;
+    }
+
+
+    /* =========================================
+       4. SERVICES GRID (Kartu Layanan)
+       ========================================= */
+    /* Target container di Homepage & Halaman Service */
+    #homepage-service-container, 
+    #service-container {
+        display: grid;
+        /* Paksa menjadi 1 kolom tumpuk ke bawah */
+        grid-template-columns: 1fr !important; 
+        gap: 30px;
+    }
+
+    .service-card-modern {
+        max-width: 100%; /* Kartu memenuhi lebar layar */
+    }
+
+
+    /* =========================================
+       5. DETAIL PAGE (Halaman Slider)
+       ========================================= */
+    .detail-grid {
+        /* Ubah layout 2 kolom menjadi 1 kolom tumpuk */
+        grid-template-columns: 1fr; 
+        gap: 40px;
+    }
+
+    .detail-content { order: 1; } /* Konten utama di urutan pertama */
+    .detail-sidebar { order: 2; } /* Sidebar harga pindah ke bawah */
+
+    .sidebar-card { width: 100%; }
+
+    /* Penyesuaian Slider Before-After */
+    .comparison-container { 
+        margin-bottom: 20px; 
+    }
+    .slider-handle { 
+        width: 50px; height: 50px; /* Perbesar sedikit area sentuh */
+    }
+    .label { 
+        font-size: 0.75rem; padding: 4px 10px; /* Kecilkan label */
+    }
+
+
+    /* =========================================
+       6. TESTIMONIAL SLIDER
+       ========================================= */
+    .testi-card { 
+        flex-direction: column; /* Avatar atas, Teks bawah */
+        text-align: center; 
+    }
+    .testi-avatar { margin: 0 0 15px 0; }
+    .quote-icon { display: none; } /* Sembunyikan ikon kutipan besar */
+
+
+    /* =========================================
+       7. FOOTER SECTION
+       ========================================= */
+    footer {
+        padding-top: 40px;
+        text-align: center; /* Semua teks rata tengah */
+    }
+
+    .footer-grid {
+        /* Ubah menjadi 1 kolom tumpuk */
+        grid-template-columns: 1fr; 
+        gap: 30px;
+        padding-bottom: 30px;
+    }
+
+    .footer-story { margin: 0 auto; } /* Tengahkan paragraf cerita */
+    
+    /* Tengahkan ikon kontak dan sosmed */
+    .contact-item, 
+    .social-icons { 
+        justify-content: center; 
+    }
+}
+
+
+/* --------------------------------------------------------------------------
+   B. SMALL MOBILE DEVICES (Layar Max: 480px)
+   (Penyesuaian tambahan khusus HP Kecil / Portrait)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 480px) {
+    
+    /* Perkecil lagi font judul agar tidak makan tempat */
+    h1 { font-size: 1.7rem; }
+    
+    .nav-links a { margin: 12px 0; font-size: 1rem; }
+
+    /* Buat semua tombol penting menjadi Lebar Penuh (Full Width) */
+    .btn-block-style, 
+    .btn-whatsapp, 
+    .btn-primary {
