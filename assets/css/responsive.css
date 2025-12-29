@@ -2,6 +2,7 @@
    RESPONSIVE.CSS
    Project: Beres.in
    Description: Mengatur tampilan untuk Tablet (768px) dan Mobile (480px).
+   Struktur: Terkelompok berdasarkan Halaman & Komponen.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -10,70 +11,75 @@
 @media screen and (max-width: 768px) {
 
     /* =========================================
-       1. GLOBAL & UTILITY
+       1. GLOBAL UTILITY & TYPOGRAPHY
        ========================================= */
     .container {
         width: 100%;
-        padding: 0 20px; /* Padding standar mobile */
+        padding: 0 20px;
     }
-
+    
     h1 { font-size: 2rem; }
     h2 { font-size: 1.6rem; }
-    p  { font-size: 1rem; }
 
 
     /* =========================================
-       2. NAVIGATION BAR (Mobile Menu)
+       2. COMPONENT: NAVBAR (HEADER)
        ========================================= */
     
-    /* 1. Atur Layout Container Navbar */
+    /* Layout Container Header */
     .navbar .container {
-        justify-content: space-between; 
+        justify-content: space-between;
         align-items: center;
         padding: 0 15px;
         position: relative;
     }
 
-    /* 2. Perbaikan Tombol 'Bantuan' di Header (Agar tidak raksasa) */
+    /* LOGIKA TOMBOL 'BANTUAN' (HEADER) */
+    /* Mencegah tombol ini menjadi full-width di mobile */
     .navbar .nav-btn-header {
-        width: auto !important; /* Reset width 100% */
+        width: auto !important;      
         display: inline-flex !important;
-        padding: 8px 16px;      
-        font-size: 0.85rem;     
-        margin-left: auto;      /* Dorong ke kanan dekat hamburger */
-        margin-right: 15px;     /* Jarak dengan hamburger */
+        padding: 8px 14px;           
+        font-size: 0.85rem;          
+        margin-left: auto;           /* Dorong ke kanan */
+        margin-right: 15px;          /* Jarak ke hamburger */
         height: auto;
-        line-height: 1;
-        box-shadow: none;       
+        border-radius: 50px;
     }
 
-    /* 3. Styling Menu Dropdown (Nav Links) */
+    /* Sembunyikan tombol CTA Desktop jika ada */
+    .nav-cta.desktop-only {
+        display: none !important;
+    }
+
+
+    /* =========================================
+       3. COMPONENT: MENU DROPDOWN
+       ========================================= */
     .nav-links {
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
         background-color: #ffffff;
-
-        /* Layout Flex Column (Tegak Lurus) */
+        
+        /* Layout Flex Vertikal */
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
-
-        padding: 40px 20px;
-        border-top: 1px solid #f0f0f0;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.05);
         
-        /* Animasi Slide & Fade */
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        padding: 30px 20px;
+        border-top: 1px solid #f0f0f0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        
+        /* Animasi Slide */
+        transition: all 0.3s ease;
         opacity: 0;
-        transform: translateY(-20px);
-        pointer-events: none; /* Cegah klik saat sembunyi */
+        transform: translateY(-10px);
+        pointer-events: none;
         z-index: 999;
     }
 
-    /* State Aktif (Saat menu dibuka) */
     .nav-links.active {
         opacity: 1;
         transform: translateY(0);
@@ -88,254 +94,161 @@
         display: block;
     }
 
-    /* Link Bantuan di dalam Menu (Opsional: Sembunyikan jika double) */
-    .nav-links .mobile-only-link {
-        display: block; /* Atau none jika tidak ingin ada di menu */
+    /* Tombol 'Pesan Sekarang' (Versi Mobile di dalam Menu) */
+    .nav-links .mobile-cta-btn {
+        display: flex !important;    
+        width: 100%;                 
+        justify-content: center;
+        margin-top: 20px;
+        padding: 12px;
     }
 
-    /* 4. Animasi Hamburger Icon */
+
+    /* =========================================
+       4. COMPONENT: HAMBURGER ICON
+       ========================================= */
     .mobile-menu-icon {
-        display: flex;       
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 44px;         
-        height: 44px;
+        width: 40px; height: 40px;
         cursor: pointer;
         z-index: 1002;
-        gap: 6px; 
-        background: transparent;
-        border: none;
+        gap: 6px;
     }
 
     .mobile-menu-icon span {
         display: block;
-        width: 28px;
-        height: 3px;         
-        background-color: var(--color-text-heading, #333);
+        width: 26px; height: 3px;
+        background-color: #333;
         border-radius: 3px;
-        position: static !important;
-        margin: 0 !important;
-        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        transition: 0.3s;
     }
 
-    /* Hamburger Active State (X) */
-    .mobile-menu-icon.active span:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
-    }
-    .mobile-menu-icon.active span:nth-child(2) {
-        opacity: 0;
-        transform: translateX(-10px);
-    }
-    .mobile-menu-icon.active span:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
-    }
+    /* Animasi Menjadi X */
+    .mobile-menu-icon.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .mobile-menu-icon.active span:nth-child(2) { opacity: 0; }
+    .mobile-menu-icon.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
 
     /* =========================================
-       3. HOMEPAGE SECTIONS
+       5. PAGE: HOMEPAGE (HERO SECTION)
        ========================================= */
-
-    /* --- Hero Section --- */
     .hero-content {
-        display: flex;
-        flex-direction: column-reverse; /* Gambar di atas */
-        align-items: center;
+        flex-direction: column-reverse; /* Gambar atas, Teks bawah */
         text-align: center;
         padding-top: 20px;
-        padding-bottom: 40px;
-        gap: 30px;
-    }
-
-    .text-area { width: 100%; padding: 0 15px; }
-    .text-area h1 { font-size: 2rem; line-height: 1.3; margin-bottom: 15px; }
-    .text-area p { padding: 0 10px; margin-bottom: 30px; }
-
-    .image-area { width: 100%; justify-content: center; margin-bottom: 0; }
-    .hero-img { width: 80%; max-width: 320px; height: auto; }
-
-    /* Hero Buttons & Badges */
-    .hero-buttons {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-    .hero-buttons .btn { width: 100%; max-width: 280px; margin-bottom: 25px; }
-    
-    .trust-badge {
-        display: flex;
-        flex-wrap: wrap; /* Mencegah overflow */
-        justify-content: center; 
-        gap: 15px;
-        width: 100%;
     }
     
-    .trust-badge span {
-        white-space: nowrap;
-        background: rgba(255, 255, 255, 0.5);
-        padding: 5px 10px;
-        border-radius: 15px;
+    .hero-img { width: 80%; max-width: 320px; margin: 0 auto; }
+    .text-area { padding: 20px 0; }
+    
+    .hero-buttons { 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
     }
-
-    /* --- Features Grid --- */
-    .features-grid {
-        display: grid;
-        grid-template-columns: 1fr; /* 1 Kolom */
-        gap: 30px;
-        padding: 0 20px;
-    }
-    .feature-card { padding: 20px; }
-
-    /* --- Services Grid --- */
-    #homepage-service-container, 
-    #service-container {
-        display: grid;
-        grid-template-columns: 1fr !important;
-        gap: 30px;
-    }
-    .service-card-modern { max-width: 100%; }
+    .hero-buttons .btn { width: 100%; max-width: 280px; margin-bottom: 20px; }
+    
+    /* Fix Badge agar tidak overflow */
+    .trust-badge { justify-content: center; flex-wrap: wrap; }
 
 
     /* =========================================
-       4. TESTIMONIALS (Horizontal Scroll)
+       6. PAGE: HOMEPAGE (FEATURES & SERVICES)
        ========================================= */
-    .slider-container {
-        width: 100%;
-        padding: 10px 0 30px 0;
+    
+    /* Reset Grid menjadi 1 Kolom */
+    .features-grid, 
+    #service-container {
+        grid-template-columns: 1fr !important; 
+        gap: 30px;
     }
 
+
+    /* =========================================
+       7. COMPONENT: TESTIMONIAL SLIDER
+       ========================================= */
+    .slider-container { width: 100%; overflow: hidden; }
+    
     .slider-track {
         display: flex;
         gap: 20px;
-        overflow-x: auto; /* Scroll aktif */
-        scroll-snap-type: x mandatory; 
-        -webkit-overflow-scrolling: touch; 
-        scrollbar-width: none;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
         padding-bottom: 20px;
+        -webkit-overflow-scrolling: touch;
     }
     .slider-track::-webkit-scrollbar { display: none; }
-
+    
     .slider-item {
         flex: 0 0 auto;
-        width: 85%; /* Peek effect */
-        scroll-snap-align: center; 
+        width: 85%;
+        scroll-snap-align: center;
     }
-
-    .testi-card {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px 20px;
-        height: 100%;
-    }
-
-    .testi-avatar { margin: 0 0 15px 0; }
-    .quote-icon { display: none; }
-
-    /* Indikator Dots */
-    .slider-dots { margin-top: 10px; }
-    .dot { width: 10px; height: 10px; }
-    .dot.active { width: 25px; }
 
 
     /* =========================================
-       5. CONTACT PAGE
+       8. PAGE: SERVICE DETAIL
        ========================================= */
-    .contact-grid-wrapper {
-        display: grid;
-        grid-template-columns: 1fr; /* Stack 1 Kolom */
-        gap: 40px;
-    }
-
-    .contact-info-card { padding: 25px 20px; width: 100%; }
+    .detail-grid { grid-template-columns: 1fr !important; gap: 30px; }
+    .detail-sidebar { position: static; width: 100%; }
     
-    .info-item {
-        flex-direction: row;
-        align-items: flex-start;
-        padding: 15px;
-    }
-    .info-item .icon { flex-shrink: 0; }
-
-    .faq-wrapper { padding-top: 0; }
-    .faq-wrapper h3 { text-align: center; margin-bottom: 20px; }
-    .faq-accordion { margin: 0; width: 100%; }
-    .faq-question { padding: 15px 0; font-size: 1rem; }
-
-
-    /* =========================================
-       6. SERVICE DETAIL PAGE
-       ========================================= */
-    .detail-grid {
-        grid-template-columns: 1fr; /* Stack 1 Kolom */
-        gap: 40px;
-    }
-    .detail-content { order: 1; }
-    .detail-sidebar { order: 2; position: static; width: 100%; z-index: 1; }
-
-    /* Slider Before-After Mobile */
-    .comparison-container { margin-bottom: 20px; }
-    .slider-handle { width: 50px; height: 50px; }
-    .label { font-size: 0.75rem; padding: 4px 10px; }
-
-    /* Sidebar Mobile Adjustments */
-    .sidebar-card { padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-    .sidebar-card h3 { font-size: 1rem; text-align: center; }
-
-    /* Harga Mobile */
-    .price-tag { justify-content: center; margin: 10px 0 15px 0; }
+    /* Sidebar Elements */
+    .sidebar-card .btn-whatsapp { padding: 12px; font-size: 1rem; }
+    .price-tag { justify-content: center; }
     .price-tag .amount { font-size: 2.5rem; }
-    .price-tag .currency { font-size: 1.1rem; margin-top: 2px; }
-    
-    .price-note {
-        text-align: center;
-        border-left: none;
-        border-top: 2px solid var(--color-primary);
-    }
-
-    /* CTA Tombol Mobile */
-    .cta-area { margin-top: 20px; }
-    .sidebar-card .btn-whatsapp {
-        padding: 14px 15px;
-        font-size: 1rem;
-        border-radius: 10px;
-    }
-    .secure-info { margin-top: 10px; }
 
 
     /* =========================================
-       7. FOOTER SECTION
+       9. PAGE: CONTACT
        ========================================= */
-    footer { padding-top: 40px; text-align: center; }
-    .footer-grid { grid-template-columns: 1fr; gap: 30px; padding-bottom: 30px; }
+    .contact-grid-wrapper { grid-template-columns: 1fr !important; gap: 30px; }
+
+
+    /* =========================================
+       10. COMPONENT: FOOTER
+       ========================================= */
+    footer {
+        padding-top: 40px;
+        text-align: center; 
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr !important; 
+        gap: 30px;
+        padding-bottom: 50px; /* Padding bawah lebih lega */
+    }
+
     .footer-story { margin: 0 auto; }
-    .contact-item, .social-icons { justify-content: center; }
+    .contact-item { justify-content: center; }
+
+    /* Fix Jarak Sosmed ke Copyright */
+    .social-icons { 
+        justify-content: center;
+        margin-bottom: 25px; /* Memberi jarak ke garis copyright */
+    }
 }
 
 
 /* --------------------------------------------------------------------------
    B. SMALL MOBILE DEVICES (Layar Max: 480px)
-   (Penyesuaian tambahan khusus HP Kecil / Portrait)
    -------------------------------------------------------------------------- */
 @media screen and (max-width: 480px) {
     
-    h1 { font-size: 1.7rem; }
-    
-    .nav-links a { margin: 12px 0; font-size: 1rem; }
-
-    /* Tombol Lebar Penuh di HP Kecil */
+    /* Tombol Utama jadi Full Width agar mudah ditekan */
     .btn-block-style, 
     .btn-whatsapp, 
     .btn-primary {
-        width: 100%;
+        width: 100%; 
         display: flex;
         justify-content: center;
     }
-
-    /* KECUALI tombol header bantuan yang harus tetap kecil */
+    
+    /* KECUALI Tombol Bantuan di Header (harus tetap kecil) */
     .navbar .nav-btn-header {
         width: auto !important; 
         display: inline-flex !important;
     }
-    
-    .footer-links ul li { margin-bottom: 10px; }
 }
