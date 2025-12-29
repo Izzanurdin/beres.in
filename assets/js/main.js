@@ -1,6 +1,5 @@
 /* =========================================
    MAIN LOGIC (CONTENT RENDERER)
-   Menangani: Generate HTML untuk Services & Testimoni
    ========================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -60,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- 3. RENDER TESTIMONIAL CARDS & DOTS ONLY ---
-    // (Logika scroll/klik dipindah ke animations.js)
     const track = document.getElementById('testimonial-track');
     const dotsContainer = document.getElementById('testimonial-dots');
 

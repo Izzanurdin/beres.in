@@ -1032,6 +1032,61 @@
     gap: 8px;
 }
 
+/* =========================================
+   STYLING FORMULIR BOOKING (SIDEBAR)
+   ========================================= */
+
+.booking-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left; /* Pastikan label rata kiri */
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-heading);
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: 0.3s;
+    background-color: #f9f9f9;
+}
+
+/* Efek saat input diklik */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.1);
+}
+
+.form-group textarea {
+    resize: none; /* User gabisa tarik-tarik ukuran textarea */
+}
+
+/* Modifikasi tombol agar ada jarak dari form */
+.booking-form .btn-whatsapp {
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit; /* Agar font sama dengan body */
+}
+
 
 /* --------------------------------------------------------------------------
    9. FOOTER SECTION
