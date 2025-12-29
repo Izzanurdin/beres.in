@@ -133,8 +133,8 @@ const servicesData = [
             "Microfiber Khusus Kaca"
         ],
         link: "service-detail.html?id=toilet",
-        imageBefore: "assets/img/services/packages/toilet/img-before.jpg",
-        imageAfter: "assets/img/services/packages/toilet/img-after.jpg"
+        imageBefore: "assets/img/services/singles/toilet/img-before.jpg",
+        imageAfter: "assets/img/services/singles/toilet/img-after.jpg"
     },
     {
         id: "sofa",
@@ -163,8 +163,8 @@ const servicesData = [
             "Blower (Pengering Portable)"
         ],
         link: "service-detail.html?id=sofa",
-        imageBefore: "assets/img/services/packages/sofa/img-before.jpg",
-        imageAfter: "assets/img/services/packages/sofa/img-after.jpg"
+        imageBefore: "assets/img/services/singles/sofa/img-before.jpg",
+        imageAfter: "assets/img/services/singles/sofa/img-after.jpg"
     },
     {
         id: "dapur",
@@ -193,8 +193,8 @@ const servicesData = [
             "Spons Heavy Duty"
         ],
         link: "service-detail.html?id=dapur",
-        imageBefore: "assets/img/services/packages/dapur/img-before.jpg",
-        imageAfter: "assets/img/services/packages/dapur/img-after.png"
+        imageBefore: "assets/img/services/singles/dapur/img-before.jpg",
+        imageAfter: "assets/img/services/singles/dapur/img-after.png"
     },
     {
         id: "kulkas",
@@ -223,8 +223,8 @@ const servicesData = [
             "Penghilang Bau Alami"
         ],
         link: "service-detail.html?id=kulkas",
-        imageBefore: "assets/img/services/packages/kulkas/img-before.png",
-        imageAfter: "assets/img/services/packages/kulkas/img-after.png"
+        imageBefore: "assets/img/services/singles/kulkas/img-before.png",
+        imageAfter: "assets/img/services/singles/kulkas/img-after.png"
     },
     {
         id: "kamar",
@@ -253,8 +253,8 @@ const servicesData = [
             "Kemoceng"
         ],
         link: "service-detail.html?id=kamar",
-        imageBefore: "assets/img/services/packages/kamar/img-before.jpg",
-        imageAfter: "assets/img/services/packages/kamar/img-after.jpg"
+        imageBefore: "assets/img/services/singles/kamar/img-before.jpg",
+        imageAfter: "assets/img/services/singles/kamar/img-after.jpg"
     },
     {
         id: "kantor",
@@ -283,8 +283,8 @@ const servicesData = [
             "Chemical Glass & Floor"
         ],
         link: "service-detail.html?id=kantor",
-        imageBefore: "assets/img/services/packages/kantor/img-before.jpg",
-        imageAfter: "assets/img/services/packages/kantor/img-after.jpg"
+        imageBefore: "assets/img/services/singles/kantor/img-before.jpg",
+        imageAfter: "assets/img/services/singles/kantor/img-after.jpg"
     }
 ];
 
