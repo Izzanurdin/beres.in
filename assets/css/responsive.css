@@ -1,18 +1,41 @@
-/* =========================================
-   NAVBAR RESPONSIVE
-   ========================================= */
+/* ==========================================================================
+   RESPONSIVE.CSS
+   Project: Beres.in
+   Description: Mengatur tampilan untuk Tablet (768px) dan Mobile (480px).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   A. TABLET & MOBILE DEVICES (Layar Max: 768px)
+   -------------------------------------------------------------------------- */
 @media screen and (max-width: 768px) {
 
-    /* --- A. LOGIKA TOMBOL PESAN SEKARANG --- */
-    
-    /* 1. Sembunyikan tombol Desktop yang ada di header */
-    .nav-cta.desktop-only {
-        display: none !important; /* Paksa sembunyi */
+    /* =========================================
+       1. GLOBAL & UTILITY
+       ========================================= */
+    .container {
+        width: 100%;
+        padding: 0 20px; /* Padding standar mobile */
     }
 
-    /* 2. Tampilkan tombol Mobile yang ada di dalam menu */
+    /* Penyesuaian Tipografi Umum */
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.6rem; }
+    p  { font-size: 1rem; }
+
+
+    /* =========================================
+       2. NAVIGATION BAR (Mobile Menu)
+       ========================================= */
+    
+    /* --- Logika Tombol CTA Header --- */
+    /* Sembunyikan tombol versi Desktop */
+    .nav-cta.desktop-only {
+        display: none !important; 
+    }
+
+    /* Tampilkan tombol versi Mobile (di dalam dropdown) */
     .nav-links .mobile-cta-btn {
-        display: inline-flex !important; /* Paksa muncul */
+        display: inline-flex !important; 
         margin-top: 25px;
         width: 100%;          
         justify-content: center;
@@ -20,7 +43,7 @@
         box-shadow: 0 4px 15px rgba(39, 174, 96, 0.2);
     }
 
-    /* --- B. STYLING MENU DROPDOWN --- */
+    /* --- Styling Menu Dropdown --- */
     .nav-links {
         position: absolute;
         top: 100%;
@@ -28,6 +51,7 @@
         width: 100%;
         background-color: #ffffff;
 
+        /* Layout Flex Column (Tegak Lurus) */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -37,15 +61,15 @@
         border-top: 1px solid #f0f0f0;
         box-shadow: 0 15px 30px rgba(0,0,0,0.05);
         
-        /* Animasi Smooth */
+        /* Animasi Slide & Fade */
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         opacity: 0;
         transform: translateY(-20px);
-        pointer-events: none; /* Agar tidak bisa diklik saat sembunyi */
+        pointer-events: none; /* Cegah klik saat sembunyi */
         z-index: 999;
     }
 
-    /* Saat menu aktif */
+    /* State Aktif (Saat menu dibuka) */
     .nav-links.active {
         opacity: 1;
         transform: translateY(0);
@@ -59,9 +83,7 @@
         text-align: center;
     }
 
-
-    /* --- C. ANIMASI HAMBURGER (Sistem Flexbox) --- */
-    
+    /* --- Animasi Hamburger Icon --- */
     .mobile-menu-icon {
         display: flex;       
         flex-direction: column;
@@ -71,59 +93,43 @@
         height: 44px;
         cursor: pointer;
         z-index: 1002;
-        gap: 6px;            /* Jarak antar garis */
+        gap: 6px; /* Jarak antar garis */
         background: transparent;
         border: none;
     }
 
-    /* Garis Dasar */
     .mobile-menu-icon span {
         display: block;
         width: 28px;
         height: 3px;         
         background-color: var(--color-text-heading, #333);
         border-radius: 3px;
-        
-        /* Reset posisi agar tidak tabrakan dengan kode lama */
-        position: static !important; 
+        position: static !important; /* Reset posisi absolute lama */
         margin: 0 !important;
-        
-        /* Animasi */
         transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     }
 
-    /* --- KEADAAN AKTIF (MENJADI X) --- */
-    
-    /* Garis 1: Putar 45 derajat & Turun */
-    /* Kita gunakan translate Y sebesar (tebal garis + gap) = 3px + 6px = 9px */
+    /* Animasi Menjadi X */
     .mobile-menu-icon.active span:nth-child(1) {
         transform: translateY(9px) rotate(45deg);
     }
-
-    /* Garis 2: Menghilang */
     .mobile-menu-icon.active span:nth-child(2) {
         opacity: 0;
         transform: translateX(-10px);
     }
-
-    /* Garis 3: Putar -45 derajat & Naik */
     .mobile-menu-icon.active span:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
     }
 
 
     /* =========================================
-   PERBAIKAN HERO & FEATURES (MOBILE FIX)
-   Masukkan di dalam @media (max-width: 768px)
-   ========================================= */
+       3. HOMEPAGE SECTIONS
+       ========================================= */
 
-    /* --- 1. HERO SECTION --- */
-    
-    /* Container Utama Hero */
+    /* --- Hero Section --- */
     .hero-content {
-        /* Ubah layout: Gambar di Atas, Teks di Bawah */
         display: flex;
-        flex-direction: column-reverse; 
+        flex-direction: column-reverse; /* Gambar di atas, Teks di bawah */
         align-items: center;
         text-align: center;
         padding-top: 20px;
@@ -131,430 +137,168 @@
         gap: 30px;
     }
 
-    /* Area Teks */
-    .text-area {
-        width: 100%;
-        padding: 0 15px; /* Jarak aman kiri-kanan */
-    }
+    .text-area { width: 100%; padding: 0 15px; }
+    .text-area h1 { font-size: 2rem; line-height: 1.3; margin-bottom: 15px; }
+    .text-area p { padding: 0 10px; margin-bottom: 30px; }
 
-    .text-area h1 {
-        font-size: 2rem; /* Ukuran judul pas di HP */
-        line-height: 1.3;
-        margin-bottom: 15px;
-    }
+    .image-area { width: 100%; justify-content: center; margin-bottom: 0; }
+    .hero-img { width: 80%; max-width: 320px; height: auto; }
 
-    .text-area p {
-        font-size: 1rem;
-        padding: 0 10px; /* Fokuskan paragraf */
-        color: var(--color-text-body);
-        margin-bottom: 30px;
-    }
-
-    /* Area Gambar */
-    .image-area {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 0;
-    }
-
-    .hero-img {
-        width: 80%;       /* Lebar gambar 80% layar */
-        max-width: 320px; /* Batas maksimal */
-        height: auto;
-        border-radius: 20px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-
-    /* --- 2. PERBAIKAN OVERFLOW BADGE/TOMBOL --- */
-    
+    /* Hero Buttons & Badges */
     .hero-buttons {
         display: flex;
-        flex-direction: column; /* Tombol & Badge tumpuk ke bawah */
+        flex-direction: column;
         align-items: center;
         width: 100%;
     }
-
-    .hero-buttons .btn {
-        width: 100%;
-        max-width: 280px; /* Lebar tombol dibatasi */
-        justify-content: center;
-        margin-bottom: 25px; /* Jarak ke badge di bawahnya */
-    }
-
-    /* INI SOLUSI OVERFLOW NYA: */
+    .hero-buttons .btn { width: 100%; max-width: 280px; margin-bottom: 25px; }
+    
     .trust-badge {
         display: flex;
-        flex-wrap: wrap;       /* PENTING: Izinkan turun ke bawah jika sempit */
+        flex-wrap: wrap; /* Agar badge turun ke bawah jika sempit */
         justify-content: center; 
-        gap: 15px;             /* Jarak antar badge */
+        gap: 15px;
         width: 100%;
     }
-
+    
     .trust-badge span {
-        font-size: 0.9rem;
-        white-space: nowrap; /* Teks dalam 1 badge jangan putus */
-        background: rgba(255, 255, 255, 0.5); /* Opsional: background tipis */
+        white-space: nowrap;
+        background: rgba(255, 255, 255, 0.5);
         padding: 5px 10px;
         border-radius: 15px;
     }
 
-    /* --- 3. FEATURES SECTION (Grid ke Stack) --- */
-    
+    /* --- Features Grid --- */
     .features-grid {
         display: grid;
-        grid-template-columns: 1fr; /* Paksa 1 kolom ke bawah */
+        grid-template-columns: 1fr; /* 1 Kolom ke bawah */
         gap: 30px;
         padding: 0 20px;
     }
+    .feature-card { padding: 20px; }
 
-    .feature-card {
-        padding: 20px; /* Card lebih compact di HP */
-    }
-
-    /* =========================================
-   TESTIMONIAL SECTION 
-   ========================================= */
-
-    /* 1. Container Slider Utama */
-    .slider-container {
-        width: 100%;
-        overflow: hidden; /* Sembunyikan elemen yang keluar container utama */
-        padding: 10px 0 30px 0; /* Beri ruang bawah untuk dots */
-    }
-
-    /* 2. Track (Jalur Slider) - INI KUNCINYA */
-    .slider-track {
-        display: flex;
-        gap: 20px; /* Jarak antar kartu */
-        
-        /* Aktifkan Scroll Horizontal */
-        overflow-x: auto; 
-        
-        /* Aktifkan "Magnet" Scroll (Snap) */
-        scroll-snap-type: x mandatory; 
-        
-        /* Agar smooth saat digeser jari */
-        -webkit-overflow-scrolling: touch; 
-        
-        /* Sembunyikan Scrollbar default browser yang jelek */
-        scrollbar-width: none; /* Firefox */
-        padding-bottom: 20px; /* Ruang napas bawah */
-    }
-
-    /* Sembunyikan Scrollbar (Chrome/Safari/Edge) */
-    .slider-track::-webkit-scrollbar {
-        display: none;
-    }
-
-    /* 3. Item Slider (Pembungkus Kartu) */
-    .slider-item {
-        /* PENTING: Jangan biarkan dia mengecil (squashed) */
-        flex: 0 0 auto; 
-        
-        /* Atur lebarnya: 
-           85% = User bisa lihat sedikit kartu sebelah (efek 'peek')
-           100% = Satu kartu penuh satu layar */
-        width: 85%; 
-        
-        /* Pastikan posisi snap di tengah */
-        scroll-snap-align: center; 
-    }
-
-    /* 4. Styling Kartu (Isi Dalamnya) */
-    .testi-card {
-        background: #fff;
-        border-radius: 15px;
-        padding: 30px 20px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        height: 100%; /* Agar tinggi kartu sama rata */
-        
-        /* Layout Flex Column untuk meratakan isi */
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Tengahkan Avatar secara horizontal */
-        text-align: center;  /* Tengahkan Teks */
-    }
-
-    /* Styling Avatar */
-    .testi-avatar {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 15px;
-        border-radius: 50%;
-        overflow: hidden;
-        border: 3px solid #fff;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    
-    .testi-avatar img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    /* Styling Teks Nama & Role */
-    .testi-author h4 {
-        font-size: 1.2rem;
-        margin-bottom: 5px;
-        color: var(--color-text-heading);
-    }
-
-    .testi-author span {
-        display: block;
-        font-size: 0.9rem;
-        color: #888;
-        margin-bottom: 20px;
-    }
-
-    /* Styling Kutipan */
-    .testi-quote {
-        font-style: italic;
-        font-size: 1rem;
-        line-height: 1.6;
-        color: var(--color-text-body);
-    }
-
-    /* Sembunyikan ikon kutipan besar di HP agar tidak penuh */
-    .quote-icon {
-        display: none;
-    }
-
-    /* 5. Styling Dots (Indikator) */
-    .slider-dots {
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        margin-top: 10px;
-    }
-
-    .dot {
-        width: 10px;
-        height: 10px;
-        background-color: #ddd;
-        border-radius: 50%;
-        transition: all 0.3s;
-    }
-
-    .dot.active {
-        background-color: var(--color-primary); /* Warna Hijau Beres.in */
-        width: 25px; /* Dot aktif lebih panjang */
-        border-radius: 10px;
-    }
-
-    /* =========================================
-       4. SERVICES GRID (Kartu Layanan)
-       ========================================= */
-    /* Target container di Homepage & Halaman Service */
+    /* --- Services Grid --- */
     #homepage-service-container, 
     #service-container {
         display: grid;
-        /* Paksa menjadi 1 kolom tumpuk ke bawah */
-        grid-template-columns: 1fr !important; 
+        grid-template-columns: 1fr !important;
         gap: 30px;
     }
-
-    .service-card-modern {
-        max-width: 100%; /* Kartu memenuhi lebar layar */
-    }
+    .service-card-modern { max-width: 100%; }
 
 
     /* =========================================
-       5. DETAIL PAGE (Halaman Slider)
+       4. TESTIMONIALS (Horizontal Scroll)
        ========================================= */
-    .detail-grid {
-        /* Ubah layout 2 kolom menjadi 1 kolom tumpuk */
-        grid-template-columns: 1fr; 
+    .slider-container {
+        width: 100%;
+        padding: 10px 0 30px 0;
+    }
+
+    .slider-track {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto; /* Scroll aktif */
+        scroll-snap-type: x mandatory; /* Magnet effect */
+        -webkit-overflow-scrolling: touch; 
+        scrollbar-width: none;
+        padding-bottom: 20px;
+    }
+    .slider-track::-webkit-scrollbar { display: none; }
+
+    .slider-item {
+        flex: 0 0 auto;
+        width: 85%; /* Peek effect (kartu sebelah terlihat dikit) */
+        scroll-snap-align: center; 
+    }
+
+    .testi-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+        height: 100%;
+    }
+
+    .testi-avatar { margin: 0 0 15px 0; }
+    .quote-icon { display: none; }
+
+    /* Indikator Dots */
+    .slider-dots { margin-top: 10px; }
+    .dot { width: 10px; height: 10px; }
+    .dot.active { width: 25px; }
+
+
+    /* =========================================
+       5. CONTACT PAGE
+       ========================================= */
+    .contact-grid-wrapper {
+        display: grid;
+        grid-template-columns: 1fr; /* Stack 1 Kolom */
         gap: 40px;
     }
 
-    .detail-content { order: 1; } /* Konten utama di urutan pertama */
-    .detail-sidebar { order: 2; } /* Sidebar harga pindah ke bawah */
+    .contact-info-card { padding: 25px 20px; width: 100%; }
+    
+    .info-item {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 15px;
+    }
+    .info-item .icon { flex-shrink: 0; }
 
-    .sidebar-card { width: 100%; }
-
-    /* Penyesuaian Slider Before-After */
-    .comparison-container { 
-        margin-bottom: 20px; 
-    }
-    .slider-handle { 
-        width: 50px; height: 50px; /* Perbesar sedikit area sentuh */
-    }
-    .label { 
-        font-size: 0.75rem; padding: 4px 10px; /* Kecilkan label */
-    }
+    .faq-wrapper { padding-top: 0; }
+    .faq-wrapper h3 { text-align: center; margin-bottom: 20px; }
+    .faq-accordion { margin: 0; width: 100%; }
+    .faq-question { padding: 15px 0; font-size: 1rem; }
 
 
     /* =========================================
-       6. TESTIMONIAL SLIDER
+       6. SERVICE DETAIL PAGE
        ========================================= */
-    .testi-card { 
-        flex-direction: column; /* Avatar atas, Teks bawah */
-        text-align: center; 
+    .detail-grid {
+        grid-template-columns: 1fr; /* Stack 1 Kolom */
+        gap: 40px;
     }
-    .testi-avatar { margin: 0 0 15px 0; }
-    .quote-icon { display: none; } /* Sembunyikan ikon kutipan besar */
+    .detail-content { order: 1; }
+    .detail-sidebar { order: 2; position: static; width: 100%; z-index: 1; }
+
+    /* Slider Before-After Mobile */
+    .comparison-container { margin-bottom: 20px; }
+    .slider-handle { width: 50px; height: 50px; }
+    .label { font-size: 0.75rem; padding: 4px 10px; }
+
+    /* Sidebar Mobile Adjustments */
+    .sidebar-card { padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+    .sidebar-card h3 { font-size: 1rem; text-align: center; }
+
+    /* Harga Mobile */
+    .price-tag { justify-content: center; margin: 10px 0 15px 0; }
+    .price-tag .amount { font-size: 2.5rem; }
+    .price-tag .currency { font-size: 1.1rem; margin-top: 2px; }
+    
+    .price-note {
+        text-align: center;
+        border-left: none;
+        border-top: 2px solid var(--color-primary);
+    }
+
+    /* CTA Tombol Mobile */
+    .cta-area { margin-top: 20px; }
+    .sidebar-card .btn-whatsapp {
+        padding: 14px 15px;
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+    .secure-info { margin-top: 10px; }
+
 
     /* =========================================
        7. FOOTER SECTION
        ========================================= */
-    footer {
-        padding-top: 40px;
-        text-align: center; /* Semua teks rata tengah */
-    }
-
-    .footer-grid {
-        /* Ubah menjadi 1 kolom tumpuk */
-        grid-template-columns: 1fr; 
-        gap: 30px;
-        padding-bottom: 30px;
-    }
-
-    .footer-story { margin: 0 auto; } /* Tengahkan paragraf cerita */
-    
-    /* Tengahkan ikon kontak dan sosmed */
-    .contact-item, 
-    .social-icons { 
-        justify-content: center; 
-    }
-
-    /* =========================================
-   PERBAIKAN HALAMAN KONTAK (MOBILE)
-   Masukkan di dalam @media (max-width: 768px)
-   ========================================= */
-
-    /* 1. Ubah Grid Menjadi Stack (Tumpuk ke Bawah) */
-    .contact-grid-wrapper {
-        display: grid;
-        grid-template-columns: 1fr; /* HANYA 1 KOLOM */
-        gap: 40px; /* Jarak antara Kartu Kontak dan FAQ */
-    }
-
-    /* 2. Styling Kartu Kontak di HP */
-    .contact-info-card {
-        padding: 25px 20px; /* Padding sedikit dikecilkan */
-        /* Opsional: Jika ingin kartu memenuhi lebar layar */
-        width: 100%; 
-    }
-    
-    /* Perbaiki item info (alamat/email) biar tidak gepeng */
-    .info-item {
-        flex-direction: row; /* Tetap menyamping ikon & teksnya */
-        align-items: flex-start; /* Ikon sejajar dengan baris pertama teks */
-        padding: 15px;
-    }
-
-    .info-item .icon {
-        flex-shrink: 0; /* PENTING: Mencegah ikon mengecil/gepeng */
-    }
-
-    /* 3. Styling FAQ Wrapper */
-    .faq-wrapper {
-        padding-top: 0; /* Hapus padding atas karena sudah ada gap grid */
-    }
-    
-    .faq-wrapper h3 {
-        text-align: center; /* Judul FAQ rata tengah biar rapi */
-        margin-bottom: 20px;
-    }
-
-    /* Reset margin bawaan FAQ accordion agar pas di container */
-    .faq-accordion {
-        margin: 0; 
-        width: 100%;
-        max-width: 100%;
-    }
-
-    /* Pertajam area klik FAQ di HP */
-    .faq-question {
-        font-size: 1rem; /* Ukuran font disesuaikan */
-        padding: 15px 0;
-    }
-    
-    .faq-icon {
-        font-size: 1.1rem;
-        margin-left: 10px; /* Jarak aman antara teks dan ikon + */
-    }
-
-    /* =========================================
-   PENYESUAIAN SIDEBAR & CTA (MOBILE)
-   Masukkan di dalam @media (max-width: 768px)
-   ========================================= */
-
-    /* 1. Reset Sticky Sidebar */
-    /* Di HP, sidebar tidak perlu sticky karena posisinya ada di paling bawah */
-    .detail-sidebar {
-        position: static; 
-        width: 100%;
-        margin-top: 0;
-        z-index: 1;
-    }
-
-    /* 2. Kecilkan Padding Kartu */
-    .sidebar-card {
-        padding: 20px 20px; /* Desktop: 35px -> Mobile: 20px */
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Shadow lebih tipis */
-    }
-
-    .sidebar-card h3 {
-        font-size: 1rem;
-        margin-bottom: 5px;
-        text-align: center; /* Judul rata tengah biar rapi */
-    }
-
-    /* 3. Kecilkan Ukuran Harga */
-    .price-tag {
-        justify-content: center; /* Tengahkan harga */
-        margin: 10px 0 15px 0;
-    }
-
-    .price-tag .amount {
-        font-size: 2.5rem; /* Desktop: 3.5rem -> Mobile: 2.5rem */
-    }
-
-    .price-tag .currency {
-        font-size: 1.1rem;
-        margin-top: 2px;
-    }
-
-    .price-tag .unit {
-        font-size: 0.9rem;
-    }
-
-    /* Catatan harga lebih ringkas */
-    .price-note {
-        font-size: 0.85rem;
-        padding: 8px 12px;
-        text-align: center; /* Teks rata tengah */
-        border-left: none; /* Hapus garis samping */
-        border-top: 2px solid var(--color-primary); /* Ganti jadi garis atas */
-    }
-
-    /* 4. Adjust Tombol Pesan Sekarang */
-    .cta-area {
-        margin-top: 20px;
-    }
-
-    .sidebar-card .btn-whatsapp {
-        padding: 14px 15px; /* Desktop: 18px -> Mobile: 14px */
-        font-size: 1rem;    /* Desktop: 1.15rem -> Mobile: 1rem */
-        border-radius: 10px;
-    }
-    
-    .sidebar-card .btn-whatsapp i {
-        font-size: 1.2rem; /* Kecilkan ikon WA */
-    }
-
-    /* 5. Info Keamanan */
-    .secure-info {
-        font-size: 0.75rem;
-        margin-top: 10px;
-    }
-
-    .sidebar-card hr {
-        margin: 15px 0; /* Kurangi jarak garis pemisah */
-    }
+    footer { padding-top: 40px; text-align: center; }
+    .footer-grid { grid-template-columns: 1fr; gap: 30px; padding-bottom: 30px; }
+    .footer-story { margin: 0 auto; }
+    .contact-item, .social-icons { justify-content: center; }
 }
 
 
@@ -567,10 +311,18 @@
     /* Perkecil lagi font judul agar tidak makan tempat */
     h1 { font-size: 1.7rem; }
     
+    /* Jarak menu lebih rapat */
     .nav-links a { margin: 12px 0; font-size: 1rem; }
 
     /* Buat semua tombol penting menjadi Lebar Penuh (Full Width) */
     .btn-block-style, 
     .btn-whatsapp, 
-    .btn-primary 
+    .btn-primary {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    /* Footer link lebih rapat */
+    .footer-links ul li { margin-bottom: 10px; }
 }
