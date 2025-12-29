@@ -1,10 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+    // --- MOBILE NAVIGATION TOGGLE ---
         const menuBtn = document.getElementById('mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
 
         menuBtn.addEventListener('click', () => {
         navLinks.classList.toggle('active');
+    });
+
+    // (Opsional) Tutup menu saat salah satu link diklik
+    const links = document.querySelectorAll('.nav-links a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuBtn.classList.remove('active'); // Balikkan ikon jadi burger lagi
+        });
     });
 
     // --- 1. FAQ ACCORDION LOGIC ---
